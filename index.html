@@ -3,27 +3,19 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>SKIN CHECK | Men’s Skincare Survey</title>
-
-<!-- Link Preview / Social Share Tile -->
-<meta name="title" content="SKIN CHECK | Men’s Skincare Survey">
-<meta name="description" content="Help us understand what men really want from everyday skincare. 5–7 minutes. Anonymous.">
-
-<!-- Open Graph for Messenger, Facebook, LinkedIn, Viber, etc. -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://achillesprojects07-bit.github.io/male-skincare-validator/">
-<meta property="og:title" content="SKIN CHECK | Men’s Skincare Survey">
-<meta property="og:description" content="Help us understand what men really want from everyday skincare. 5–7 minutes. Anonymous.">
-<meta property="og:image" content="https://achillesprojects07-bit.github.io/male-skincare-validator/skin-check-preview.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-
-<!-- Twitter / X Preview -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:url" content="https://achillesprojects07-bit.github.io/male-skincare-validator/">
-<meta name="twitter:title" content="SKIN CHECK | Men’s Skincare Survey">
-<meta name="twitter:description" content="Help us understand what men really want from everyday skincare. 5–7 minutes. Anonymous.">
-<meta name="twitter:image" content="https://achillesprojects07-bit.github.io/male-skincare-validator/skin-check-preview.png">
+<title>SKIN CHECK | Men’s Skincare Survey V1.2</title>
+<meta name="description" content="A short men’s skincare survey about product appeal, pricing, buying channels, and brand messaging."/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="SKIN CHECK | Men’s Skincare Survey"/>
+<meta property="og:description" content="Help us understand what men really want from everyday skincare."/>
+<meta property="og:url" content="https://achillesprojects07-bit.github.io/male-skincare-validator/"/>
+<meta property="og:image" content="https://achillesprojects07-bit.github.io/male-skincare-validator/skin-check-preview.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="SKIN CHECK | Men’s Skincare Survey"/>
+<meta name="twitter:description" content="Help us understand what men really want from everyday skincare."/>
+<meta name="twitter:image" content="https://achillesprojects07-bit.github.io/male-skincare-validator/skin-check-preview.png"/>
 <style>
 :root{
   --navy:#1B3A6B;--white:#FFFFFF;--gray-bg:#F5F6F8;
@@ -441,6 +433,25 @@ footer .version-tag{
         <div class="opt-btn" data-key="respondent_location" data-value="Prefer not to say" onclick="selectOpt(this)">Prefer not to say</div>
       </div>
     </div>
+    <div class="q-block">
+      <div class="q-label">Profession / Work Type <span style="color:var(--gray-text);font-weight:400;font-size:13px;">(optional)</span></div>
+      <div class="opt-list" id="opts-profession">
+        <div class="opt-btn" data-key="respondent_profession" data-value="Office / Corporate employee" onclick="selectOpt(this)">Office / Corporate employee</div>
+        <div class="opt-btn" data-key="respondent_profession" data-value="Business owner / Self-employed" onclick="selectOpt(this)">Business owner / Self-employed</div>
+        <div class="opt-btn" data-key="respondent_profession" data-value="Sales / Client-facing work" onclick="selectOpt(this)">Sales / Client-facing work</div>
+        <div class="opt-btn" data-key="respondent_profession" data-value="Field work / Operations" onclick="selectOpt(this)">Field work / Operations</div>
+        <div class="opt-btn" data-key="respondent_profession" data-value="Healthcare / Medical" onclick="selectOpt(this)">Healthcare / Medical</div>
+        <div class="opt-btn" data-key="respondent_profession" data-value="Service / Hospitality / Retail" onclick="selectOpt(this)">Service / Hospitality / Retail</div>
+        <div class="opt-btn" data-key="respondent_profession" data-value="Creative / Media / Marketing" onclick="selectOpt(this)">Creative / Media / Marketing</div>
+        <div class="opt-btn" data-key="respondent_profession" data-value="Student" onclick="selectOpt(this)">Student</div>
+        <div class="opt-btn" data-key="respondent_profession" data-value="Currently not working" onclick="selectOpt(this)">Currently not working</div>
+        <div class="opt-btn" data-key="respondent_profession" data-value="Prefer not to say" onclick="selectOpt(this)">Prefer not to say</div>
+        <div class="opt-btn" data-key="respondent_profession" data-value="Other" onclick="selectOpt(this);showProfessionOther()">Other</div>
+      </div>
+      <div id="profession-other-wrap" style="display:none;margin-top:10px;">
+        <input type="text" class="text-input" id="respondent_professionOther" placeholder="Please specify (optional)" oninput="answers.respondent_professionOther=this.value;save()"/>
+      </div>
+    </div>
     <div class="nav-row"><button class="btn-primary" onclick="goTo('sA')">Next →</button></div>
   </div>
 </div>
@@ -451,7 +462,7 @@ footer .version-tag{
 <div class="container">
   <div class="section-header">
     <div class="section-num">Section A · 1 of 5</div>
-    <div class="section-title">Screening &amp; Skincare Behavior</div>
+    <div class="section-title">About Your Skincare Habits</div>
   </div>
   <div class="progress-wrap">
     <div class="progress-row"><div class="progress-track"><div class="progress-fill" style="width:20%"></div></div><span class="progress-pct">20%</span></div>
@@ -487,6 +498,32 @@ footer .version-tag{
         <div class="chk-btn" data-key="q2_productsUsed" data-value="None of the above" onclick="toggleOpt(this)"><div class="chk-icon">✓</div>None of the above</div>
       </div>
       <div class="field-error" id="err-q2">Please select at least one option to continue.</div>
+    </div>
+
+    <!-- Q2A -->
+    <div class="q-block" id="qblock-q2a">
+      <div class="q-label">Q2A. What skin concerns do you currently have, if any? <span class="required-star">*</span></div>
+      <div class="q-sub">Select all that apply</div>
+      <div class="opt-list">
+        <div class="chk-btn" data-key="q2a_skinConcerns" data-value="Oily face" onclick="toggleOpt(this)"><div class="chk-icon">✓</div>Oily face</div>
+        <div class="chk-btn" data-key="q2a_skinConcerns" data-value="Pimples or acne" onclick="toggleOpt(this)"><div class="chk-icon">✓</div>Pimples or acne</div>
+        <div class="chk-btn" data-key="q2a_skinConcerns" data-value="Acne marks or dark spots" onclick="toggleOpt(this)"><div class="chk-icon">✓</div>Acne marks or dark spots</div>
+        <div class="chk-btn" data-key="q2a_skinConcerns" data-value="Dry or rough skin" onclick="toggleOpt(this)"><div class="chk-icon">✓</div>Dry or rough skin</div>
+        <div class="chk-btn" data-key="q2a_skinConcerns" data-value="Dull or tired-looking skin" onclick="toggleOpt(this)"><div class="chk-icon">✓</div>Dull or tired-looking skin</div>
+        <div class="chk-btn" data-key="q2a_skinConcerns" data-value="Large pores" onclick="toggleOpt(this)"><div class="chk-icon">✓</div>Large pores</div>
+        <div class="chk-btn" data-key="q2a_skinConcerns" data-value="Blackheads or whiteheads" onclick="toggleOpt(this)"><div class="chk-icon">✓</div>Blackheads or whiteheads</div>
+        <div class="chk-btn" data-key="q2a_skinConcerns" data-value="Uneven skin tone" onclick="toggleOpt(this)"><div class="chk-icon">✓</div>Uneven skin tone</div>
+        <div class="chk-btn" data-key="q2a_skinConcerns" data-value="Sun damage or darkening from the sun" onclick="toggleOpt(this)"><div class="chk-icon">✓</div>Sun damage or darkening from the sun</div>
+        <div class="chk-btn" data-key="q2a_skinConcerns" data-value="Sensitive skin or irritation" onclick="toggleOpt(this)"><div class="chk-icon">✓</div>Sensitive skin or irritation</div>
+        <div class="chk-btn" data-key="q2a_skinConcerns" data-value="Fine lines or signs of aging" onclick="toggleOpt(this)"><div class="chk-icon">✓</div>Fine lines or signs of aging</div>
+        <div class="chk-btn" data-key="q2a_skinConcerns" data-value="Shaving irritation or razor bumps" onclick="toggleOpt(this)"><div class="chk-icon">✓</div>Shaving irritation or razor bumps</div>
+        <div class="chk-btn" data-key="q2a_skinConcerns" data-value="I do not have any skin concerns" onclick="toggleOpt(this)"><div class="chk-icon">✓</div>I do not have any skin concerns</div>
+        <div class="chk-btn" data-key="q2a_skinConcerns" data-value="Other" onclick="toggleOpt(this);showSkinOther()"><div class="chk-icon">✓</div>Other</div>
+      </div>
+      <div class="field-error" id="err-q2a">Please select at least one option to continue.</div>
+      <div id="skin-other-wrap" style="display:none;margin-top:10px;">
+        <input type="text" class="text-input" id="q2a_skinConcernsOther" placeholder="Please specify (optional)" oninput="answers.q2a_skinConcernsOther=this.value;save()"/>
+      </div>
     </div>
 
     <!-- Q3 -->
@@ -548,7 +585,7 @@ footer .version-tag{
 <div class="container">
   <div class="section-header">
     <div class="section-num">Section B · 2 of 5</div>
-    <div class="section-title">Brand Awareness &amp; Rebrand Perception</div>
+    <div class="section-title">Brands &amp; First Impressions</div>
   </div>
   <div class="progress-wrap">
     <div class="progress-row"><div class="progress-track"><div class="progress-fill" style="width:40%"></div></div><span class="progress-pct">40%</span></div>
@@ -557,25 +594,31 @@ footer .version-tag{
 
     <!-- Q6 -->
     <div class="q-block" id="qblock-q6">
-      <div class="q-label">Q6. Which of the following skincare brands have you heard of? <span style="color:var(--gray-text);font-weight:400;font-size:13px;">(optional)</span></div>
+      <div class="q-label">Q6. Which of the following face care or skincare brands have you heard of? <span style="color:var(--gray-text);font-weight:400;font-size:13px;">(optional)</span></div>
       <div class="q-sub">Select all that apply</div>
       <div class="opt-list">
-        <div class="chk-btn" data-key="q6_brandAwareness" data-value="[Rebranded Brand]" onclick="toggleOpt(this)"><div class="chk-icon">✓</div>[Rebranded Brand]</div>
         <div class="chk-btn" data-key="q6_brandAwareness" data-value="Nivea Men" onclick="toggleOpt(this)"><div class="chk-icon">✓</div>Nivea Men</div>
         <div class="chk-btn" data-key="q6_brandAwareness" data-value="Garnier Men" onclick="toggleOpt(this)"><div class="chk-icon">✓</div>Garnier Men</div>
-        <div class="chk-btn" data-key="q6_brandAwareness" data-value="Camou" onclick="toggleOpt(this)"><div class="chk-icon">✓</div>Camou</div>
         <div class="chk-btn" data-key="q6_brandAwareness" data-value="Cetaphil" onclick="toggleOpt(this)"><div class="chk-icon">✓</div>Cetaphil</div>
-        <div class="chk-btn" data-key="q6_brandAwareness" data-value="Zenith" onclick="toggleOpt(this)"><div class="chk-icon">✓</div>Zenith</div>
-        <div class="chk-btn" data-key="q6_brandAwareness" data-value="None of these" onclick="toggleOpt(this)"><div class="chk-icon">✓</div>None of these</div>
+        <div class="chk-btn" data-key="q6_brandAwareness" data-value="Belo Men" onclick="toggleOpt(this)"><div class="chk-icon">✓</div>Belo Men</div>
+        <div class="chk-btn" data-key="q6_brandAwareness" data-value="Master" onclick="toggleOpt(this)"><div class="chk-icon">✓</div>Master</div>
+        <div class="chk-btn" data-key="q6_brandAwareness" data-value="Luxe Organix" onclick="toggleOpt(this)"><div class="chk-icon">✓</div>Luxe Organix</div>
+        <div class="chk-btn" data-key="q6_brandAwareness" data-value="Oxecure" onclick="toggleOpt(this)"><div class="chk-icon">✓</div>Oxecure</div>
+        <div class="chk-btn" data-key="q6_brandAwareness" data-value="Pond’s Men" onclick="toggleOpt(this)"><div class="chk-icon">✓</div>Pond’s Men</div>
+        <div class="chk-btn" data-key="q6_brandAwareness" data-value="None of these" onclick="toggleOpt(this);showQ6Other()"><div class="chk-icon">✓</div>None of these</div>
       </div>
-      <div class="q-note">Q6 brand names can be updated in the survey code. See README.</div>
+      <div class="q-note">This helps us understand which brands are already familiar to respondents.</div>
+      <div id="q6-other-wrap" style="display:none;margin-top:14px;">
+        <div class="q-label" style="font-size:14px;">Are there any other face care, grooming, or skincare brands you know or have used?</div>
+        <textarea class="textarea-input" id="q6a_otherBrands" placeholder="Type any brands you remember, even if you are not sure if they are skincare brands." oninput="answers.q6a_otherBrands=this.value;save()"></textarea>
+      </div>
     </div>
 
     <!-- Q7 -->
     <div class="q-block" id="qblock-q7">
       <div class="q-label">Q7. When you see this brand identity, what 3 words come to mind? <span style="color:var(--gray-text);font-weight:400;font-size:13px;">(optional)</span></div>
       <div class="placeholder-card">
-        <div class="ph-title">[Place rebranded logo or brand image here]</div>
+        <div class="ph-title">[Place brand image or product concept visual here]</div>
         <div class="ph-hint">Update this in index.html — see README.</div>
       </div>
       <textarea class="textarea-input" id="q7_logoWords" placeholder="Type 3 words that come to mind..." oninput="answers.q7_logoWords=this.value;save()"></textarea>
@@ -583,27 +626,16 @@ footer .version-tag{
 
     <!-- Q8 -->
     <div class="q-block" id="qblock-q8">
-      <div class="q-label">Q8. Which packaging would you be more likely to choose? <span class="required-star">*</span></div>
-      <div class="pkg-pair">
-        <div class="placeholder-card" style="margin-bottom:0;">
-          <div class="ph-title">Packaging A</div>
-          <div style="margin-top:6px;font-size:12px;">Current Packaging</div>
-          <div class="ph-hint">[Place image here]</div>
-        </div>
-        <div class="placeholder-card" style="margin-bottom:0;">
-          <div class="ph-title">Packaging B</div>
-          <div style="margin-top:6px;font-size:12px;">New Packaging</div>
-          <div class="ph-hint">[Place image here]</div>
-        </div>
-      </div>
+      <div class="q-label">Q8. Which of these descriptions would make you most interested in trying a men’s skincare product? <span class="required-star">*</span></div>
       <div class="opt-list">
-        <div class="opt-btn" data-key="q8_packagingChoice" data-value="Packaging A — Current Packaging" onclick="selectOpt(this)">Packaging A — Current Packaging</div>
-        <div class="opt-btn" data-key="q8_packagingChoice" data-value="Packaging B — New Packaging" onclick="selectOpt(this)">Packaging B — New Packaging</div>
-        <div class="opt-btn" data-key="q8_packagingChoice" data-value="No preference" onclick="selectOpt(this)">No preference</div>
+        <div class="opt-btn" data-key="q8_packagingChoice" data-value="Option A — Simple daily SPF moisturizer" onclick="selectOpt(this)">Option A — A simple daily face moisturizer with SPF for men who want to look clean and fresh without a complicated routine.</div>
+        <div class="opt-btn" data-key="q8_packagingChoice" data-value="Option B — Matte oil-control SPF moisturizer" onclick="selectOpt(this)">Option B — A matte, non-greasy SPF moisturizer that helps control oil and protect your skin every day.</div>
+        <div class="opt-btn" data-key="q8_packagingChoice" data-value="Option C — Easy all-in-one daily face product" onclick="selectOpt(this)">Option C — An easy all-in-one daily face product for men who want healthier-looking skin with less effort.</div>
+        <div class="opt-btn" data-key="q8_packagingChoice" data-value="None of these" onclick="selectOpt(this)">None of these</div>
       </div>
-      <div class="field-error" id="err-q8">Please select a packaging option to continue.</div>
+      <div class="field-error" id="err-q8">Please select one description to continue.</div>
       <div style="margin-top:14px;">
-        <div class="q-label" style="font-size:14px;">Why did you choose that option? <span class="required-star">*</span></div>
+        <div class="q-label" style="font-size:14px;">Why did you choose that description? <span class="required-star">*</span></div>
         <div id="qblock-q8why">
           <textarea class="textarea-input" id="q8_packagingWhy" placeholder="Please explain your choice..." oninput="answers.q8_packagingWhy=this.value;save()"></textarea>
           <div class="field-error" id="err-q8why">Please explain your choice to continue.</div>
@@ -641,7 +673,7 @@ footer .version-tag{
 <div class="container">
   <div class="section-header">
     <div class="section-num">Section C · 3 of 5</div>
-    <div class="section-title">Product Concept Testing</div>
+    <div class="section-title">Product Interest</div>
   </div>
   <div class="progress-wrap">
     <div class="progress-row"><div class="progress-track"><div class="progress-fill" style="width:60%"></div></div><span class="progress-pct">60%</span></div>
@@ -721,7 +753,7 @@ footer .version-tag{
 <div class="container">
   <div class="section-header">
     <div class="section-num">Section D · 4 of 5</div>
-    <div class="section-title">Pricing &amp; Purchase Channels</div>
+    <div class="section-title">Price &amp; Where You Buy</div>
   </div>
   <div class="progress-wrap">
     <div class="progress-row"><div class="progress-track"><div class="progress-fill" style="width:80%"></div></div><span class="progress-pct">80%</span></div>
@@ -811,7 +843,7 @@ footer .version-tag{
 <div class="container">
   <div class="section-header">
     <div class="section-num">Section E · 5 of 5</div>
-    <div class="section-title">Messaging &amp; Rebrand Receptivity</div>
+    <div class="section-title">Messages That Feel Relevant</div>
   </div>
   <div class="progress-wrap">
     <div class="progress-row"><div class="progress-track"><div class="progress-fill" style="width:100%"></div></div><span class="progress-pct">100%</span></div>
@@ -839,14 +871,14 @@ footer .version-tag{
 
     <!-- Q19 -->
     <div class="q-block" id="qblock-q19">
-      <div class="q-label">Q19. If this brand updated its packaging and messaging while keeping the same product quality, how would you feel? <span class="required-star">*</span></div>
+      <div class="q-label">Q19. If a skincare brand for men looked and sounded like the examples you saw today, how would you feel about it? <span class="required-star">*</span></div>
       <div class="opt-list">
         <div class="opt-btn" data-key="q19_rebrandFeeling" data-value="Very positive" onclick="selectOpt(this)">Very positive</div>
         <div class="opt-btn" data-key="q19_rebrandFeeling" data-value="Positive" onclick="selectOpt(this)">Positive</div>
         <div class="opt-btn" data-key="q19_rebrandFeeling" data-value="Neutral" onclick="selectOpt(this)">Neutral</div>
         <div class="opt-btn" data-key="q19_rebrandFeeling" data-value="Negative" onclick="selectOpt(this)">Negative</div>
         <div class="opt-btn" data-key="q19_rebrandFeeling" data-value="Very negative" onclick="selectOpt(this)">Very negative</div>
-        <div class="opt-btn" data-key="q19_rebrandFeeling" data-value="I am not familiar with the brand" onclick="selectOpt(this)">I am not familiar with the brand</div>
+        <div class="opt-btn" data-key="q19_rebrandFeeling" data-value="I do not have enough information to say" onclick="selectOpt(this)">I do not have enough information to say</div>
       </div>
       <div class="field-error" id="err-q19">Please answer this question to continue.</div>
       <div style="margin-top:12px;">
@@ -1028,13 +1060,31 @@ function toggleOpt(el) {
   const key = el.dataset.key;
   const val = el.dataset.value;
   if (!Array.isArray(answers[key])) answers[key] = [];
+
+  const noneValues = ['None of the above', 'None of these', 'I do not have any skin concerns'];
+  const isNone = noneValues.includes(val);
+
   if (el.classList.contains('selected')) {
     el.classList.remove('selected');
     answers[key] = answers[key].filter(v => v !== val);
   } else {
-    el.classList.add('selected');
-    answers[key].push(val);
+    if (isNone) {
+      answers[key] = [val];
+      document.querySelectorAll('[data-key="' + key + '"]').forEach(b => b.classList.remove('selected'));
+      el.classList.add('selected');
+    } else {
+      answers[key] = answers[key].filter(v => !noneValues.includes(v));
+      document.querySelectorAll('[data-key="' + key + '"]').forEach(b => {
+        if (noneValues.includes(b.dataset.value)) b.classList.remove('selected');
+      });
+      el.classList.add('selected');
+      if (!answers[key].includes(val)) answers[key].push(val);
+    }
   }
+
+  if (key === 'q2a_skinConcerns') showSkinOther();
+  if (key === 'q6_brandAwareness') showQ6Other();
+
   save();
   clearErr(key);
 }
@@ -1047,6 +1097,28 @@ function showOther() {
     wrap.style.display = 'none';
     answers.q5_other = '';
   }
+}
+
+function showProfessionOther() {
+  const wrap = document.getElementById('profession-other-wrap');
+  if (!wrap) return;
+  wrap.style.display = answers.respondent_profession === 'Other' ? 'block' : 'none';
+  if (answers.respondent_profession !== 'Other') answers.respondent_professionOther = '';
+}
+
+function showSkinOther() {
+  const wrap = document.getElementById('skin-other-wrap');
+  if (!wrap) return;
+  const arr = Array.isArray(answers.q2a_skinConcerns) ? answers.q2a_skinConcerns : [];
+  wrap.style.display = arr.includes('Other') ? 'block' : 'none';
+  if (!arr.includes('Other')) answers.q2a_skinConcernsOther = '';
+}
+
+function showQ6Other() {
+  const wrap = document.getElementById('q6-other-wrap');
+  if (!wrap) return;
+  const arr = Array.isArray(answers.q6_brandAwareness) ? answers.q6_brandAwareness : [];
+  wrap.style.display = arr.includes('None of these') ? 'block' : 'none';
 }
 
 function clearErr(key) {
@@ -1092,17 +1164,20 @@ function renderSectionState(sectionId) {
   });
 
   // Text inputs
-  ['q5_other','q7_logoWords','q8_packagingWhy','q12_productNameWhy',
+  ['q5_other','respondent_professionOther','q2a_skinConcernsOther','q6a_otherBrands','q7_logoWords','q8_packagingWhy','q12_productNameWhy',
    'q18_taglineWhy','q19_rebrandWhy','optional_barrier'].forEach(k => {
     const el = document.getElementById(k);
     if (el && answers[k] !== undefined) el.value = answers[k];
   });
 
   // Q5 other visibility
+  if (sectionId === 'profile') { showProfessionOther(); }
   if (sectionId === 'sA') {
     const w = document.getElementById('q5-other-wrap');
     if (w) w.style.display = answers.q5_primaryReason === 'Other' ? 'block' : 'none';
+    showSkinOther();
   }
+  if (sectionId === 'sB') { showQ6Other(); }
 
   // Q15 dropdowns
   if (sectionId === 'sD') {
@@ -1159,7 +1234,7 @@ function onChannelChange(changedRank) {
 // VALIDATION
 // =====================================================================
 const REQUIRED = {
-  sA: ['q1_usageFrequency','q2_productsUsed','q3_buyer','q4_spendPast6Months','q5_primaryReason'],
+  sA: ['q1_usageFrequency','q2_productsUsed','q2a_skinConcerns','q3_buyer','q4_spendPast6Months','q5_primaryReason'],
   sB: ['q8_packagingChoice','q8_packagingWhy','q9_brandFitScore'],
   sC: ['q10_tryLikelihood','q11_confidenceDriver','q12_productNameChoice','q13_oneProductChoice'],
   sD: ['q14_maxPrice','q15','q16_tiktokTrustContent','q17_watsonsShelfIntent'],
@@ -1207,13 +1282,14 @@ function showErr(key) {
   const ids = [
     'err-' + key,
     'err-' + key.replace(/_/g,''),
-    'err-' + key.replace('_packagingChoice',''),
+    'err-' + key.replace('_descriptionChoice',''),
     'err-' + key.replace('_taglineChoice','')
   ];
   // Find the matching key mapping
   const keyMap = {
     'q1_usageFrequency': 'err-q1',
     'q2_productsUsed': 'err-q2',
+    'q2a_skinConcerns': 'err-q2a',
     'q3_buyer': 'err-q3',
     'q4_spendPast6Months': 'err-q4',
     'q5_primaryReason': 'err-q5',
@@ -1251,11 +1327,15 @@ function nextSection(from, to) {
 const REVIEW_CONFIG = [
   { section: 'Profile', sectionId: 'profile', items: [
     { key: 'respondent_ageRange', label: 'Age Range' },
-    { key: 'respondent_location', label: 'Location' }
+    { key: 'respondent_location', label: 'Location' },
+    { key: 'respondent_profession', label: 'Profession / Work Type' },
+    { key: 'respondent_professionOther', label: 'Profession / Other' }
   ]},
   { section: 'Section A — Screening & Behavior', sectionId: 'sA', items: [
     { key: 'q1_usageFrequency', label: 'Q1. Usage frequency' },
     { key: 'q2_productsUsed', label: 'Q2. Products used', isArray: true },
+    { key: 'q2a_skinConcerns', label: 'Q2A. Skin concerns', isArray: true },
+    { key: 'q2a_skinConcernsOther', label: 'Q2A. Other skin concern' },
     { key: 'q3_buyer', label: 'Q3. Who buys' },
     { key: 'q4_spendPast6Months', label: 'Q4. Past 6 months spend' },
     { key: 'q5_primaryReason', label: 'Q5. Primary reason' },
@@ -1263,19 +1343,20 @@ const REVIEW_CONFIG = [
   ]},
   { section: 'Section B — Brand Awareness', sectionId: 'sB', items: [
     { key: 'q6_brandAwareness', label: 'Q6. Brand awareness', isArray: true },
+    { key: 'q6a_otherBrands', label: 'Q6A. Other brands known' },
     { key: 'q7_logoWords', label: 'Q7. Logo words' },
-    { key: 'q8_packagingChoice', label: 'Q8. Packaging choice' },
-    { key: 'q8_packagingWhy', label: 'Q8. Why that choice' },
+    { key: 'q8_packagingChoice', label: 'Q8. Description preference' },
+    { key: 'q8_packagingWhy', label: 'Q8. Why that description' },
     { key: 'q9_brandFitScore', label: 'Q9. Brand fit score (1–5)' }
   ]},
-  { section: 'Section C — Product Concept', sectionId: 'sC', items: [
+  { section: 'Section C — Product Interest', sectionId: 'sC', items: [
     { key: 'q10_tryLikelihood', label: 'Q10. Trial likelihood' },
     { key: 'q11_confidenceDriver', label: 'Q11. Confidence driver' },
     { key: 'q12_productNameChoice', label: 'Q12. Product name' },
     { key: 'q12_productNameWhy', label: 'Q12. Why that name' },
     { key: 'q13_oneProductChoice', label: 'Q13. One product choice' }
   ]},
-  { section: 'Section D — Pricing & Channels', sectionId: 'sD', items: [
+  { section: 'Section D — Price & Channels', sectionId: 'sD', items: [
     { key: 'q14_maxPrice', label: 'Q14. Max price' },
     { key: 'q15_channelRank1', label: 'Q15. Channel Rank 1' },
     { key: 'q15_channelRank2', label: 'Q15. Channel Rank 2' },
@@ -1283,10 +1364,10 @@ const REVIEW_CONFIG = [
     { key: 'q16_tiktokTrustContent', label: 'Q16. Social trust content' },
     { key: 'q17_watsonsShelfIntent', label: 'Q17. Watsons shelf intent' }
   ]},
-  { section: 'Section E — Messaging & Rebrand', sectionId: 'sE', items: [
+  { section: 'Section E — Messages', sectionId: 'sE', items: [
     { key: 'q18_taglineChoice', label: 'Q18. Tagline choice' },
     { key: 'q18_taglineWhy', label: 'Q18. Why that tagline' },
-    { key: 'q19_rebrandFeeling', label: 'Q19. Rebrand feeling' },
+    { key: 'q19_rebrandFeeling', label: 'Q19. Concept feeling' },
     { key: 'q19_rebrandWhy', label: 'Q19. Why that feeling' },
     { key: 'q20_friendTrialIntent', label: 'Q20. Friend trial intent' },
     { key: 'optional_barrier', label: 'Barrier to trying' }
@@ -1317,7 +1398,7 @@ function buildReviewScreen() {
   // Scores preview
   const scoreNames = [
     ['computed_skincareReadinessScore','Skincare Readiness'],
-    ['computed_brandRelevanceScore','Brand Relevance'],
+    ['computed_brandRelevanceScore','Concept Relevance'],
     ['computed_productTrialIntentScore','Trial Intent'],
     ['computed_priceAcceptanceScore','Price Acceptance'],
     ['computed_channelFitScore','Channel Fit']
@@ -1327,7 +1408,7 @@ function buildReviewScreen() {
     scoreHtml += `<div class="score-card"><div class="score-val">${scores[k]}</div><div class="score-lbl">${lbl}<br><span style="font-size:10px;">/100</span></div></div>`;
   });
   document.getElementById('scores-preview').innerHTML = scoreHtml;
-  document.getElementById('master-score-preview').innerHTML = `<div class="val">${scores.computed_rebrandValidationScore}</div><div class="lbl">Rebrand Validation Score / 100</div>`;
+  document.getElementById('master-score-preview').innerHTML = `<div class="val">${scores.computed_rebrandValidationScore}</div><div class="lbl">Concept Validation Score / 100</div>`;
 }
 
 // =====================================================================
@@ -1351,11 +1432,11 @@ function computeAllScores() {
   readiness = Math.min(100, readiness);
 
   // 2. Brand Relevance
-  const q8m = {'Packaging B — New Packaging':30,'No preference':15,'Packaging A — Current Packaging':5};
+  const q8m = {'Option A — Simple daily SPF moisturizer':26,'Option B — Matte oil-control SPF moisturizer':30,'Option C — Easy all-in-one daily face product':28,'None of these':0};
   let relevance = q8m[d.q8_packagingChoice] || 0;
   const q9m = {1:0,2:10,3:20,4:30,5:40};
   relevance += q9m[parseInt(d.q9_brandFitScore)] || 0;
-  const q19m = {'Very positive':30,'Positive':24,'Neutral':15,'I am not familiar with the brand':12,'Negative':5,'Very negative':0};
+  const q19m = {'Very positive':30,'Positive':24,'Neutral':15,'I do not have enough information to say':12,'Negative':5,'Very negative':0};
   relevance += q19m[d.q19_rebrandFeeling] || 0;
   relevance = Math.min(100, relevance);
 
@@ -1380,8 +1461,8 @@ function computeAllScores() {
   if (prio.includes(d.q15_channelRank3)) cf += 15;
   cf = Math.min(100, cf);
 
-  // 6. Rebrand Validation
-  const rebrand = Math.round(trial*0.35 + relevance*0.25 + readiness*0.15 + price*0.15 + cf*0.10);
+  // 6. Concept Validation
+  const concept = Math.round(trial*0.35 + relevance*0.25 + readiness*0.15 + price*0.15 + cf*0.10);
 
   return {
     computed_skincareReadinessScore: readiness,
@@ -1389,7 +1470,7 @@ function computeAllScores() {
     computed_productTrialIntentScore: trial,
     computed_priceAcceptanceScore: price,
     computed_channelFitScore: cf,
-    computed_rebrandValidationScore: rebrand
+    computed_rebrandValidationScore: concept
   };
 }
 
@@ -1409,9 +1490,14 @@ function computeSegmentTags() {
   if (ranks.some(r => r === 'Watsons' || r === 'Mercury Drug')) tags.push('Watsons/Mercury Buyer');
   if (ranks.some(r => r === 'Shopee' || r === 'Lazada' || r === 'TikTok Shop')) tags.push('Social-Commerce Buyer');
   if (d.q16_tiktokTrustContent && d.q16_tiktokTrustContent !== 'None — I do not get skincare info from social media') tags.push('TikTok-Influenced Buyer');
-  if (d.q8_packagingChoice === 'Packaging B — New Packaging' && (d.q19_rebrandFeeling === 'Very positive' || d.q19_rebrandFeeling === 'Positive')) tags.push('Rebrand Supporter');
+  if (['Option A — Simple daily SPF moisturizer','Option B — Matte oil-control SPF moisturizer','Option C — Easy all-in-one daily face product'].includes(d.q8_packagingChoice) && (d.q19_rebrandFeeling === 'Very positive' || d.q19_rebrandFeeling === 'Positive')) tags.push('Concept Supporter');
   if (d.respondent_location === 'Metro Manila') tags.push('Metro Manila');
   if (['35–39','40–44','45–50'].includes(d.respondent_ageRange)) tags.push('35-50 Core Target');
+  if (['Office / Corporate employee','Sales / Client-facing work','Business owner / Self-employed'].includes(d.respondent_profession)) tags.push('Appearance-Matters Work');
+  const concerns = Array.isArray(d.q2a_skinConcerns) ? d.q2a_skinConcerns : [];
+  if (concerns.includes('Oily face')) tags.push('Oily Skin Concern');
+  if (concerns.includes('Pimples or acne') || concerns.includes('Acne marks or dark spots')) tags.push('Acne / Marks Concern');
+  if (concerns.includes('Sun damage or darkening from the sun')) tags.push('Sun Exposure Concern');
   return tags.join(', ');
 }
 
@@ -1445,6 +1531,7 @@ function submitSurvey() {
     utm_source, utm_medium, utm_campaign,
     userAgent: navigator.userAgent,
     q2_productsUsed: Array.isArray(answers.q2_productsUsed) ? answers.q2_productsUsed.join(', ') : (answers.q2_productsUsed || ''),
+    q2a_skinConcerns: Array.isArray(answers.q2a_skinConcerns) ? answers.q2a_skinConcerns.join(', ') : (answers.q2a_skinConcerns || ''),
     q6_brandAwareness: Array.isArray(answers.q6_brandAwareness) ? answers.q6_brandAwareness.join(', ') : (answers.q6_brandAwareness || '')
   });
 
@@ -1490,8 +1577,19 @@ function resumeSurvey() {
 }
 
 function startFresh() {
-  try { localStorage.removeItem(LS_KEY); localStorage.removeItem(LS_SUBMITTED); } catch(e) {}
+  try {
+    localStorage.removeItem(LS_KEY);
+    localStorage.removeItem(LS_SUBMITTED);
+    sessionStorage.clear();
+  } catch(e) {}
   answers = {};
+  document.querySelectorAll('.selected').forEach(el => el.classList.remove('selected'));
+  document.querySelectorAll('input[type="text"], input[type="password"], textarea').forEach(el => el.value = '');
+  document.querySelectorAll('select').forEach(el => el.selectedIndex = 0);
+  const rb = document.getElementById('resume-box');
+  if (rb) rb.style.display = 'none';
+  const sb = document.getElementById('start-btn');
+  if (sb) sb.textContent = 'Start Survey →';
   goTo('landing');
 }
 
@@ -1575,10 +1673,10 @@ function renderDashboard(data) {
   html += `<div class="admin-section-title">Key Performance Indicators</div>
   <div class="kpi-grid">
     ${kpiCard(n, 'Total Responses', '')}
-    ${kpiCard(kpi.avgRebrandValidationScore || 0, 'Avg Rebrand Score', '/100')}
+    ${kpiCard(kpi.avgRebrandValidationScore || 0, 'Avg Concept Score', '/100')}
     ${kpiCard(kpi.avgTrialIntentScore || 0, 'Avg Trial Intent', '/100')}
     ${kpiCard((kpi.highIntentPct || 0) + '%', 'High-Intent Users', '(' + (kpi.highIntentCount || 0) + ' respondents)')}
-    ${kpiCard((kpi.packagingBPct || 0) + '%', 'Prefer New Packaging', 'Packaging B')}
+    ${kpiCard((kpi.descriptionBPct || 0) + '%', 'Prefer Description B', 'Description B')}
     ${kpiCard(kpi.bestPriceBand || '—', 'Top Price Band', 'most selected in Q14')}
     ${kpiCard(kpi.winningTagline ? kpi.winningTagline.replace('Option ','').split(' — ')[0] : '—', 'Winning Tagline', kpi.winningTagline || '')}
     ${kpiCard(kpi.topPurchaseChannel || '—', 'Top Channel (Rank 1)', 'Q15')}
@@ -1613,9 +1711,11 @@ function renderDashboard(data) {
 
   // Distribution charts
   const charts = [
+    { title: 'Profession / Work Type', data: dist.profession },
     { title: 'Q1 — Skincare Usage Frequency', data: dist.q1 },
     { title: 'Q2 — Products Currently Used (multi-select)', data: dist.q2 },
-    { title: 'Q8 — Packaging Preference', data: dist.q8 },
+    { title: 'Q2A — Skin Concerns (multi-select)', data: dist.q2a },
+    { title: 'Q8 — Description Preference', data: dist.q8 },
     { title: 'Q9 — Brand Fit Score (1–5)', data: dist.q9 },
     { title: 'Q10 — Trial Likelihood', data: dist.q10 },
     { title: 'Q14 — Price Acceptance', data: dist.q14 },
@@ -1624,7 +1724,7 @@ function renderDashboard(data) {
     { title: 'Q16 — Social Media Trust Content', data: dist.q16 },
     { title: 'Q17 — Watsons Shelf Intent', data: dist.q17 },
     { title: 'Q18 — Tagline Preference', data: dist.q18 },
-    { title: 'Q19 — Rebrand Feeling', data: dist.q19 },
+    { title: 'Q19 — Concept Feeling', data: dist.q19 },
     { title: 'Q20 — Friend Trial Intent (2× weight)', data: dist.q20 }
   ];
   charts.forEach(c => {
@@ -1638,7 +1738,7 @@ function renderDashboard(data) {
     'Current Skincare User','Low-Maintenance User','Partner-Influenced Buyer',
     'High-Intent Trial User','Price-Sensitive Buyer','Premium-Open Buyer',
     'Watsons/Mercury Buyer','Social-Commerce Buyer','TikTok-Influenced Buyer',
-    'Rebrand Supporter','Metro Manila','35-50 Core Target'
+    'Concept Supporter','Metro Manila','35-50 Core Target'
   ];
   allSegs.forEach(s => {
     const cnt = seg[s] || 0;
@@ -1649,11 +1749,12 @@ function renderDashboard(data) {
   // Open-ended responses
   html += `<div class="card"><div class="admin-section-title">Open-Ended Responses (last 10 each)</div>`;
   const oeFields = [
-    { key: 'q7', label: 'Q7 — Logo Words' },
-    { key: 'q8why', label: 'Q8 — Packaging Choice Reason' },
+    { key: 'q6a', label: 'Q6A — Other Brands Known' },
+    { key: 'q7', label: 'Q7 — First Impression Words' },
+    { key: 'q8why', label: 'Q8 — Description Choice Reason' },
     { key: 'q12why', label: 'Q12 — Product Name Reason' },
     { key: 'q18why', label: 'Q18 — Tagline Reason' },
-    { key: 'q19why', label: 'Q19 — Rebrand Feeling Reason' },
+    { key: 'q19why', label: 'Q19 — Concept Feeling Reason' },
     { key: 'barrier', label: 'Barrier to Trying' }
   ];
   oeFields.forEach(f => {
@@ -1727,14 +1828,14 @@ function getDemoData() {
     ok: true, totalResponses: 12,
     kpi: {
       avgRebrandValidationScore: 67, avgTrialIntentScore: 72,
-      highIntentCount: 5, highIntentPct: 42, packagingBPct: 58,
+      highIntentCount: 5, highIntentPct: 42, descriptionBPct: 58,
       bestPriceBand: '₱400–₱699', winningTagline: 'Option C — Clean. Confident. Ready.',
       topPurchaseChannel: 'Shopee', topConfidenceDriver: 'Dermatologist recommendation'
     },
     distributions: {
       q1: {'Daily':4,'A few times a week':5,'Occasionally':2,'Rarely':1},
       q2: {'Bar soap':9,'Facial wash':7,'Moisturizer':4,'Sunscreen':3,'Serum':1},
-      q8: {'Packaging B — New Packaging':7,'Packaging A — Current Packaging':3,'No preference':2},
+      q8: {'Description B — New Description':7,'Description A — Current Description':3,'No preference':2},
       q9: {'3':4,'4':5,'5':2,'2':1},
       q10: {'Very likely':4,'Likely':5,'Neutral':2,'Unlikely':1},
       q14: {'₱200–₱399':3,'₱400–₱699':5,'₱700–₱999':3,'Under ₱200':1},
@@ -1743,24 +1844,24 @@ function getDemoData() {
       q16: {'A real man around my age showing his results':5,'A dermatologist explaining the product':4,'Before-and-after transformation':2,'Simple grooming routine demo':1},
       q17: {'Very likely':3,'Likely':5,'Neutral':3,'Unlikely':1},
       q18: {'Option A — Face the Day Fresh.':3,'Option B — Skincare That Works Hard Like You.':3,'Option C — Clean. Confident. Ready.':5,'None of these':1},
-      q19: {'Very positive':4,'Positive':5,'Neutral':2,'I am not familiar with the brand':1},
+      q19: {'Very positive':4,'Positive':5,'Neutral':2,'I do not have enough information to say':1},
       q20: {'Very likely':5,'Likely':4,'Neutral':2,'Unlikely':1}
     },
     segments: {
       'Current Skincare User':9,'High-Intent Trial User':5,'Price-Sensitive Buyer':4,
       'Premium-Open Buyer':3,'Watsons/Mercury Buyer':7,'Social-Commerce Buyer':9,
-      'TikTok-Influenced Buyer':10,'Rebrand Supporter':6,'Partner-Influenced Buyer':3,
+      'TikTok-Influenced Buyer':10,'Concept Supporter':6,'Partner-Influenced Buyer':3,
       'Low-Maintenance User':4,'Metro Manila':7,'35-50 Core Target':5
     },
     openEnded: {
       q7: [{n:1,text:'Clean, fresh, confident'},{n:2,text:'Masculine, trustworthy, modern'}],
-      q8why: [{n:1,text:'The new packaging looks more premium and modern'},{n:2,text:'Cleaner design, easy to read'}],
+      q8why: [{n:1,text:'The new description looks more premium and modern'},{n:2,text:'Cleaner design, easy to read'}],
       q18why: [{n:1,text:'It sounds relatable and simple'},{n:2,text:'Clean and Confident matches how I want to feel'}],
       barrier: [{n:1,text:'Not sure if it works for oily skin'},{n:2,text:'Would need to see reviews first'}]
     },
     utmSources: {'direct':5,'tiktok':4,'barbershop-qr':2,'email':1},
     ageRanges: {'35–39':3,'40–44':4,'45–50':2,'30–34':2,'25–29':1},
-    brandAwareness: {'[Rebranded Brand]':6,'Nivea Men':10,'Garnier Men':8,'Cetaphil':5,'Camou':3,'Zenith':2,'None of these':1},
+    brandAwareness: {'Nivea Men':10,'Garnier Men':8,'Cetaphil':5,'Belo Men':6,'Master':4,'Luxe Organix':3,'Oxecure':3,'Pond’s Men':5,'None of these':1},
     lastUpdated: new Date().toISOString()
   };
 }

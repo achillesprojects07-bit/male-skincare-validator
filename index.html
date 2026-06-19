@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>SKIN CHECK | Men’s Skincare Survey V1.0</title>
+<title>SKIN CHECK | Men’s Skincare Survey V1.1</title>
 <style>
 :root{
   --navy:#1B3A6B;--white:#FFFFFF;--gray-bg:#F5F6F8;
@@ -217,6 +217,144 @@ footer a:hover{color:var(--navy);}
   .segment-grid{grid-template-columns:1fr 1fr;}
   .chart-label{flex:0 0 120px;}
 }
+
+
+/* ===== V1.1 PREMIUM VISUAL REFRESH ===== */
+:root{
+  --navy:#111827;
+  --white:#FFFFFF;
+  --gray-bg:#F3F0EA;
+  --teal:#246A5A;
+  --amber:#B8843A;
+  --red:#B42318;
+  --gray-border:#E2DDD4;
+  --gray-text:#6F6A63;
+  --teal-light:#EAF3EF;
+  --navy-light:#F5F2EC;
+  --shadow:0 18px 45px rgba(17,24,39,0.08);
+  --rc:18px;
+  --rb:12px;
+}
+body{
+  background:
+    radial-gradient(circle at top left, rgba(184,132,58,.14), transparent 28%),
+    linear-gradient(180deg,#FAF8F4 0%,#F3F0EA 100%);
+  color:#1D232B;
+  letter-spacing:-.01em;
+}
+.container{max-width:680px;}
+.card{
+  border:1px solid rgba(226,221,212,.95);
+  box-shadow:var(--shadow);
+  border-radius:22px;
+}
+#screen-landing{padding:42px 0 24px;}
+#screen-landing .container > div{
+  background:linear-gradient(145deg,#FFFFFF 0%,#F8F4EC 100%);
+  border:1px solid rgba(226,221,212,.9);
+  box-shadow:0 24px 70px rgba(17,24,39,.10);
+  border-radius:28px;
+  padding:36px 22px 24px!important;
+}
+.landing-logo{
+  text-align:left;
+  margin-bottom:26px;
+  padding:6px 2px 0;
+}
+.landing-logo .brand-mark{display:none;}
+.landing-kicker{
+  font-size:12px;
+  letter-spacing:.22em;
+  color:var(--amber);
+  font-weight:800;
+  margin-bottom:10px;
+}
+.landing-title{
+  font-size:46px;
+  line-height:.95;
+  font-weight:900;
+  letter-spacing:.08em;
+  color:#111827;
+  margin-bottom:14px;
+}
+.landing-sub{
+  font-size:16px;
+  color:#5D5851;
+  line-height:1.65;
+  max-width:560px;
+}
+.version-tag{
+  background:#111827;
+  color:#F6E7C8;
+  border:1px solid rgba(246,231,200,.22);
+  font-size:11px;
+  letter-spacing:.08em;
+  padding:5px 10px;
+  margin-bottom:18px;
+}
+#screen-landing .card{
+  background:rgba(255,255,255,.72);
+  box-shadow:none;
+  border:1px solid rgba(226,221,212,.95);
+}
+.btn-primary,.btn-teal{
+  background:#111827;
+  color:white;
+  border-radius:999px;
+  box-shadow:0 10px 24px rgba(17,24,39,.16);
+}
+.btn-primary:hover,.btn-teal:hover{background:#243041;}
+.btn-secondary{
+  background:rgba(255,255,255,.72);
+  color:#111827;
+  border:1.5px solid #111827;
+  border-radius:999px;
+}
+.opt-btn,.chk-btn,.scale-btn,.text-input,.textarea-input,.select-input{
+  border-radius:14px;
+  border-color:#E2DDD4;
+}
+.opt-btn:hover,.chk-btn:hover,.scale-btn:hover{
+  border-color:#246A5A;
+  background:#F4FAF7;
+}
+.opt-btn.selected,.chk-btn.selected{
+  border-color:#246A5A;
+  border-left-color:#246A5A;
+  background:#EAF3EF;
+  color:#111827;
+}
+.scale-btn.selected,.progress-fill,.chk-btn.selected .chk-icon{
+  background:#246A5A;
+  border-color:#246A5A;
+}
+.section-title,.q-label,.admin-section-title,.landing-title,.kpi-val,.score-val{color:#111827;}
+.placeholder-card{
+  background:#F7F4EE;
+  border-color:#C7B99F;
+  color:#111827;
+}
+.admin-header{
+  background:linear-gradient(135deg,#111827,#253447);
+  border-radius:0 0 24px 24px;
+  box-shadow:0 18px 40px rgba(17,24,39,.18);
+}
+.admin-header h2{font-size:20px;letter-spacing:.02em;}
+footer{
+  color:#6F6A63;
+  padding-top:28px;
+}
+footer .version-tag{
+  background:#F6E7C8;
+  color:#111827;
+  border:0;
+}
+@media(max-width:640px){
+  #screen-landing .container > div{border-radius:24px;padding:30px 18px 22px!important;}
+  .landing-title{font-size:38px;letter-spacing:.06em;}
+  .landing-sub{font-size:15px;}
+}
+
 </style>
 </head>
 <body>
@@ -228,10 +366,10 @@ footer a:hover{color:var(--navy);}
 <div class="container">
   <div style="padding:40px 0 20px;">
     <div class="landing-logo">
-      <div class="brand-mark"><span>SC</span></div>
-      <div class="version-tag">V1.0</div>
+      <div class="version-tag">V1.1</div>
+      <div class="landing-kicker">MEN’S SKINCARE SURVEY</div>
       <div class="landing-title">SKIN CHECK</div>
-      <div class="landing-sub">Men’s Skincare Survey — help us understand what men really want from everyday skincare.</div>
+      <div class="landing-sub">A quick research survey on what men want from everyday skincare — clear products, fair pricing, and brands that feel easy to trust.</div>
     </div>
     <div id="resume-box" class="resume-box">
       <h4>You started a survey earlier. Continue where you left off?</h4>
@@ -241,7 +379,7 @@ footer a:hover{color:var(--navy);}
       </div>
     </div>
     <div class="card">
-      <p style="font-size:14px;color:var(--gray-text);margin-bottom:20px;line-height:1.6;">This takes about <strong>5–7 minutes</strong>. Your responses are anonymous and will only be used for research purposes.</p>
+      <p style="font-size:14px;color:var(--gray-text);margin-bottom:20px;line-height:1.6;">This takes about <strong>5–7 minutes</strong>. Your answers are anonymous and will help shape a skincare brand that feels practical, credible, and easy for men to use.</p>
       <button class="btn-primary" id="start-btn" onclick="startSurvey()" style="width:100%;font-size:17px;padding:18px;">Start Survey →</button>
     </div>
     <p style="text-align:center;font-size:12px;color:var(--gray-text);">20 questions · Anonymous · Men’s skincare research</p>
@@ -805,7 +943,7 @@ footer a:hover{color:var(--navy);}
 
 <!-- ===== FOOTER ===== -->
 <footer>
-  <span class="version-tag" style="margin-right:8px;">V1.0</span>
+  <span class="version-tag" style="margin-right:8px;">V1.1</span>
   SKIN CHECK · Men’s Skincare Survey ·
   <a href="#" onclick="event.preventDefault();showAdminLogin()">Admin</a>
 </footer>
@@ -814,7 +952,7 @@ footer a:hover{color:var(--navy);}
 // =====================================================================
 // CONFIG
 // =====================================================================
-const APP_VERSION = 'V1.0';
+const APP_VERSION = 'V1.1';
 const API_URL = 'https://script.google.com/macros/s/AKfycbwYwe3ZcnoXbYpteN8npCemYhG4OAkg53H16WKzW5RjJZiw6Mg9k6eD9qo4Rucczng9/exec';
 const ADMIN_PIN = '2468';
 const LS_KEY = 'mscv_answers';

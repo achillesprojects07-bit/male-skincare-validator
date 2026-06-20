@@ -1,48 +1,34 @@
-# SKIN CHECK V1.4 LIVE
+# SKIN INTEL V1.5 LIVE
 
-## What changed
+## Files
+- Rename `index_skin_intel_v1_5.html` to `index.html`
+- Replace your full Apps Script backend with `api_skin_intel_v1_5.gs`
 
-This build changes SKIN CHECK from an SPF-led validation survey into a true men's skincare product opportunity survey.
+## Main changes
+- Uses the V1.5 Skin Intel question set from the uploaded prompt.
+- Shows: "SKIN INTEL — Takes about 3 minutes. No wrong answers."
+- Adds Q12A as the primary product concept intent question.
+- Skips Q4 automatically if Q3 = "I do not have any skin concerns."
+- Updates Q6 brand list.
+- Uses Q7 placeholder card instead of fixed brand artwork.
+- Removes respondent-visible scoring.
+- Backend dashboard now weights Q12A and Q20 as primary intent indicators.
+- Google Sheets dashboard includes product opportunity, specific product intent, product ideas, skin concerns, trust drivers, purchase channels, barriers, and messages.
 
-### Respondent app
-- SPF is now one product option, not the center of the survey.
-- Product opportunity questions now compare facial wash, moisturizer, all-in-one serum, dark spot/acne mark care, oil control, SPF, eye/tired-face, and shaving irritation care.
-- Respondent score preview has been removed. Scores are internal analytics only.
-- Q7 image remains: `house-of-adonis-q7.png`.
-- Start Over clears local storage and resets the app.
-- Q13, Q17, Q18, and Q21 are multi-select "choose up to 3" questions.
+## Deploy
+Apps Script:
+1. Replace full `api.gs` with `api_skin_intel_v1_5.gs`.
+2. Save.
+3. Deploy > Manage deployments > Edit pencil > New version.
+4. Execute as: Me.
+5. Access: Anyone.
 
-### Apps Script backend
-- New Google Sheets tabs:
-  - `RESPONSES`
-  - `ANALYTICS_DATA`
-  - `DASHBOARD`
-  - `OPEN_ENDS`
-  - `SEGMENTS`
-  - `SETTINGS`
-- Dashboard is rebuilt after every response and whenever admin analytics is loaded.
-- Old rebrand analytics labels are replaced by product-opportunity analytics.
-- The backend appends missing columns to existing response sheets so previous data is not deleted.
+GitHub:
+1. Rename `index_skin_intel_v1_5.html` to `index.html`.
+2. Upload/replace `index.html` in GitHub.
+3. Commit.
+4. Hard refresh the live link.
 
-## Upload files
-
-Upload these to GitHub:
-- Rename `index_skin_check_v1_4.html` to `index.html`
-- Keep `house-of-adonis-q7.png` in the same folder
-- Keep `skin-check-preview.png` in the same folder
-
-Update Apps Script:
-- Replace the full Apps Script backend with `api_skin_check_v1_4.gs`
-- Save
-- Deploy > Manage deployments > Edit pencil > New version
-- Keep the same Web App URL
-- Access: Anyone
-- Execute as: Me
-
-## Rebuild Google Sheets dashboard manually
-
-Open this URL after updating Apps Script:
-
+## Rebuild dashboard manually
+Open:
 `YOUR_WEB_APP_URL?action=rebuildDashboard&pin=2468`
-
-The app is already configured with the current Apps Script URL.

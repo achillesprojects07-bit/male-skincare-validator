@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>SKIN INTEL | V1.5</title>
+<title>SKIN INTEL | V1.6</title>
 
 <meta name="title" content="SKIN INTEL">
 <meta name="description" content="Takes about 3 minutes. No wrong answers.">
@@ -178,13 +178,66 @@ footer a{color:var(--muted);text-decoration:none;font-weight:800;margin-left:6px
   .kpi-grid{grid-template-columns:1fr}
   .chart-label{flex-basis:52%}
 }
+
+/* ===================== V1.6 UX POLISH ===================== */
+.opt-btn,.chk-btn{
+  position:relative;
+  min-height:54px;
+  transform:translateY(0);
+  -webkit-tap-highlight-color:transparent;
+  transition:transform .12s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease;
+}
+.opt-btn:active,.chk-btn:active{ transform:scale(.985); }
+.opt-btn.selected,.chk-btn.selected{
+  border-color:var(--blue);
+  background:linear-gradient(180deg,#F7FBFF,#EAF2FA);
+  box-shadow:inset 4px 0 0 var(--blue), 0 8px 20px rgba(47,111,174,.10);
+}
+.opt-btn.selected::after{
+  content:"✓";
+  position:absolute;
+  right:14px;
+  top:50%;
+  transform:translateY(-50%);
+  width:24px;
+  height:24px;
+  border-radius:999px;
+  background:var(--blue);
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:14px;
+  font-weight:900;
+}
+.q-block{ scroll-margin-top:24px; }
+.q-block.flash{ animation:softPulse .45s ease; }
+@keyframes softPulse{
+  0%{box-shadow:0 0 0 rgba(47,111,174,0)}
+  50%{box-shadow:0 0 0 5px rgba(47,111,174,.10)}
+  100%{box-shadow:0 0 0 rgba(47,111,174,0)}
+}
+.sticky-next{
+  position:sticky;
+  bottom:12px;
+  z-index:10;
+  background:rgba(255,252,247,.94);
+  backdrop-filter:blur(10px);
+  border:1px solid rgba(217,211,199,.85);
+  border-radius:18px;
+  padding:10px;
+  box-shadow:0 18px 40px rgba(16,24,40,.16);
+}
+.progress-fill{ background:linear-gradient(90deg,var(--blue),#75A7D8); }
+.card{ border-color:rgba(203,213,225,.95); }
+
 </style>
 </head>
 <body>
 
 <div class="container topline">
   <div>SKIN INTEL</div>
-  <div class="version">V1.5 LIVE</div>
+  <div class="version">V1.6 LIVE</div>
 </div>
 
 <!-- LANDING -->
@@ -220,7 +273,7 @@ footer a{color:var(--muted);text-decoration:none;font-weight:800;margin-left:6px
       <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
     </div>
     <div id="survey-card" class="card"></div>
-    <div class="btn-row">
+    <div class="btn-row sticky-next">
       <button id="back-btn" class="btn-secondary" onclick="prevSection()">← Back</button>
       <button id="next-btn" class="btn-primary" onclick="nextSection()">Next →</button>
     </div>
@@ -274,7 +327,7 @@ footer a{color:var(--muted);text-decoration:none;font-weight:800;margin-left:6px
     <div class="container" style="display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;">
       <div>
         <h2>SKIN INTEL Analytics</h2>
-        <p id="admin-updated">V1.5 LIVE</p>
+        <p id="admin-updated">V1.6 LIVE</p>
       </div>
       <div style="display:flex;gap:8px;">
         <button class="btn-blue btn-sm" onclick="loadAnalytics()">Refresh</button>
@@ -288,16 +341,16 @@ footer a{color:var(--muted);text-decoration:none;font-weight:800;margin-left:6px
 </section>
 
 <footer>
-  <span>SKIN CHECK · V1.5 LIVE</span>
+  <span>SKIN CHECK · V1.6 LIVE</span>
   <a href="#" onclick="event.preventDefault();goTo('admin-login')">Admin</a>
 </footer>
 
 <script>
-const APP_VERSION = 'V1.5';
+const APP_VERSION = 'V1.6';
 const API_URL = "https://script.google.com/macros/s/AKfycbwYwe3ZcnoXbYpteN8npCemYhG4OAkg53H16WKzW5RjJZiw6Mg9k6eD9qo4Rucczng9/exec";
 const ADMIN_PIN = '2468';
-const LS_KEY = 'skinintel_v15_answers';
-const LS_SUBMITTED = 'skinintel_v15_submitted';
+const LS_KEY = 'skinintel_v16_answers';
+const LS_SUBMITTED = 'skinintel_v16_submitted';
 const IS_DEMO = API_URL.includes('PASTE_YOUR');
 
 const channelOptions = [
@@ -375,6 +428,52 @@ function loadAnswers(){
   try{ answers = JSON.parse(localStorage.getItem(LS_KEY) || '{}') || {}; }catch(e){ answers = {}; }
 }
 function saveAnswers(){ try{ localStorage.setItem(LS_KEY, JSON.stringify(answers)); }catch(e){} }
+
+function clearAllSkinIntelStorage(){
+  try{
+    const remove = [];
+    for(let i=0;i<localStorage.length;i++){
+      const k = localStorage.key(i);
+      if(k && (
+        k.toLowerCase().includes('skinintel') ||
+        k.toLowerCase().includes('skincheck') ||
+        k.toLowerCase().includes('skin_check') ||
+        k.toLowerCase().includes('skin-intel')
+      )) remove.push(k);
+    }
+    remove.forEach(k=>localStorage.removeItem(k));
+  }catch(e){}
+}
+
+function markAnsweredBlock(id){
+  const block = document.getElementById('block-'+id);
+  if(!block) return;
+  block.classList.add('flash');
+  setTimeout(()=>block.classList.remove('flash'), 500);
+}
+
+function isQuestionAnswered(id){
+  if(id === 'q16_channels'){
+    const vals = [answers.q16_channelRank1, answers.q16_channelRank2, answers.q16_channelRank3].filter(Boolean);
+    return vals.length === 3 && (new Set(vals)).size === 3;
+  }
+  const val = answers[id];
+  return !(val === undefined || val === null || val === '' || (Array.isArray(val) && val.length === 0));
+}
+
+function scrollToNextUnanswered(currentId){
+  setTimeout(()=>{
+    const blocks = Array.from(document.querySelectorAll('.q-block'));
+    const idx = blocks.findIndex(b=>b.id === 'block-'+currentId);
+    const nextBlocks = idx >= 0 ? blocks.slice(idx+1) : blocks;
+    let target = null;
+    for(const b of nextBlocks){
+      const id = b.id.replace('block-','');
+      if(!isQuestionAnswered(id)){ target = b; break; }
+    }
+    if(target) target.scrollIntoView({behavior:'smooth', block:'center'});
+  }, 180);
+}
 function goTo(id){
   document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
   document.getElementById('screen-'+id).classList.add('active');
@@ -382,11 +481,17 @@ function goTo(id){
 }
 function startSurvey(){ loadAnswers(); currentIndex = Math.min(currentIndex || 0, sections.length-1); goTo('survey'); renderSection(); }
 function startFresh(){
-  try{ localStorage.removeItem(LS_KEY); localStorage.removeItem(LS_SUBMITTED); }catch(e){}
-  answers = {}; currentIndex = 0;
+  clearAllSkinIntelStorage();
+  answers = {};
+  currentIndex = 0;
   document.querySelectorAll('.selected').forEach(x=>x.classList.remove('selected'));
+  document.querySelectorAll('input, textarea, select').forEach(el=>{
+    if(el.tagName === 'SELECT') el.selectedIndex = 0;
+    else el.value = '';
+  });
+  const rb = document.getElementById('resume-box');
+  if(rb) rb.classList.add('hidden');
   goTo('landing');
-  document.getElementById('resume-box').classList.add('hidden');
 }
 function prevSection(){ if(currentIndex>0){currentIndex--; renderSection();} else goTo('landing'); }
 function nextSection(){
@@ -486,7 +591,9 @@ function setSingle(id, value, otherId){
   if(otherId && value !== 'Other') answers[otherId] = '';
   if(id === 'q12_productIdea' && value === 'None of these') answers.q12a_productIdeaIntent = '';
   saveAnswers();
-  renderSection();
+  renderStep();
+  markAnsweredBlock(id);
+  scrollToNextUnanswered(id);
 }
 function toggleMulti(id, value, max, none, otherId){
   let arr = Array.isArray(answers[id]) ? [...answers[id]] : [];

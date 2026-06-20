@@ -3,20 +3,20 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>SKIN CHECK | Men’s Skincare Survey V1.4</title>
+<title>SKIN INTEL | V1.5</title>
 
-<meta name="title" content="SKIN CHECK | Men’s Skincare Survey">
-<meta name="description" content="A short men’s skincare survey about product needs, skin concerns, pricing, buying channels, and messaging.">
+<meta name="title" content="SKIN INTEL">
+<meta name="description" content="Takes about 3 minutes. No wrong answers.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://achillesprojects07-bit.github.io/male-skincare-validator/">
-<meta property="og:title" content="SKIN CHECK | Men’s Skincare Survey">
-<meta property="og:description" content="Help us understand what men really want from everyday skincare.">
+<meta property="og:title" content="SKIN INTEL">
+<meta property="og:description" content="Takes about 3 minutes. No wrong answers.">
 <meta property="og:image" content="https://achillesprojects07-bit.github.io/male-skincare-validator/skin-check-preview.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="SKIN CHECK | Men’s Skincare Survey">
-<meta name="twitter:description" content="Help us understand what men really want from everyday skincare.">
+<meta name="twitter:title" content="SKIN INTEL">
+<meta name="twitter:description" content="Takes about 3 minutes. No wrong answers.">
 <meta name="twitter:image" content="https://achillesprojects07-bit.github.io/male-skincare-validator/skin-check-preview.png">
 
 <style>
@@ -93,6 +93,8 @@ button{
 .q-block{margin-bottom:26px}
 .q-label{font-size:16px;font-weight:850;color:var(--charcoal);line-height:1.45;margin-bottom:10px}
 .q-sub{font-size:13px;color:var(--muted);line-height:1.4;margin-bottom:10px}
+.soft-note{background:#F2F6FB;border:1px solid #D6E3F1;color:#1F568C;border-radius:14px;padding:12px 14px;font-size:14px;line-height:1.45;margin-bottom:10px;font-weight:750}
+.placeholder-card{border:1.5px dashed #9DB7D2;border-radius:18px;background:#F8FBFF;min-height:150px;display:flex;align-items:center;justify-content:center;text-align:center;color:#1F568C;font-weight:850;padding:22px;margin:8px 0 12px}
 .required{color:var(--red)}
 .opt-list{display:flex;flex-direction:column;gap:9px}
 .opt-btn,.chk-btn{
@@ -181,31 +183,31 @@ footer a{color:var(--muted);text-decoration:none;font-weight:800;margin-left:6px
 <body>
 
 <div class="container topline">
-  <div>SKIN CHECK</div>
-  <div class="version">V1.4 LIVE</div>
+  <div>SKIN INTEL</div>
+  <div class="version">V1.5 LIVE</div>
 </div>
 
 <!-- LANDING -->
 <section id="screen-landing" class="screen active">
   <div class="container hero">
-    <div class="brand-kicker">Men’s Skincare Survey</div>
-    <h1>SKIN CHECK</h1>
-    <p>A quick research survey to understand what men actually need from skincare — product type, skin concerns, price, channels, trust drivers, and messages that feel relevant.</p>
+    <div class="brand-kicker">Takes about 3 minutes. No wrong answers.</div>
+    <h1>SKIN INTEL</h1>
+    <p>A quick check-in about face care, daily habits, buying preferences, and what would feel useful for Filipino men.</p>
     <div class="meta-row">
-      <div class="meta-pill">5–7 minutes</div>
+      <div class="meta-pill">3 minutes</div>
       <div class="meta-pill">Anonymous</div>
-      <div class="meta-pill">Product research</div>
+      <div class="meta-pill">No wrong answers</div>
     </div>
     <div id="resume-box" class="alert info hidden" style="margin-top:18px;">
-      You started a survey earlier. You can continue or start over.
+      You started earlier. You can continue or start over.
       <div class="btn-row" style="margin-top:12px;">
         <button class="btn-primary" onclick="startSurvey()">Continue</button>
         <button class="btn-secondary" onclick="startFresh()">Start Over</button>
       </div>
     </div>
     <div class="card" style="margin-top:20px;">
-      <p style="color:var(--muted);line-height:1.6;margin-bottom:18px;">Your answers are anonymous and will be used only for product and market research.</p>
-      <button class="btn-primary" style="width:100%;font-size:17px;padding:18px;" onclick="startSurvey()">Start Survey →</button>
+      <p style="color:var(--muted);line-height:1.6;margin-bottom:18px;">Your answers are anonymous.</p>
+      <button class="btn-primary" style="width:100%;font-size:17px;padding:18px;" onclick="startSurvey()">Start →</button>
     </div>
   </div>
 </section>
@@ -230,7 +232,7 @@ footer a{color:var(--muted);text-decoration:none;font-weight:800;margin-left:6px
   <div class="container">
     <div class="card">
       <h2 class="section-title">Review Your Answers</h2>
-      <p class="section-subtitle">Please check your answers before submitting. No score will be shown because this is a research survey, not a quiz.</p>
+      <p class="section-subtitle">Please check your answers before submitting.</p>
       <div id="review-content"></div>
     </div>
     <div class="card">
@@ -245,7 +247,7 @@ footer a{color:var(--muted);text-decoration:none;font-weight:800;margin-left:6px
   <div class="container ty">
     <div class="ty-icon">✓</div>
     <h2>Thank you.</h2>
-    <p>Your response has been recorded. Thank you for helping shape a skincare product that feels useful, practical, and easy for men to use.</p>
+    <p>Your answers have been recorded and will help shape a better product for Filipino men.</p>
     <button class="btn-secondary" style="min-width:220px;" onclick="startFresh()">Start Over</button>
   </div>
 </section>
@@ -255,7 +257,7 @@ footer a{color:var(--muted);text-decoration:none;font-weight:800;margin-left:6px
   <div class="container" style="padding-top:54px;">
     <div class="card" style="max-width:380px;margin:0 auto;">
       <h2 class="section-title">Admin Access</h2>
-      <p class="section-subtitle">Enter PIN to view live app analytics. Google Sheets will also have its own dashboard from the backend.</p>
+      <p class="section-subtitle">Enter PIN to view live analytics.</p>
       <input class="text-input" id="admin-pin" type="password" placeholder="PIN" onkeydown="if(event.key==='Enter')loadAnalytics()">
       <div id="pin-error" class="field-error">Invalid PIN.</div>
       <div class="btn-row">
@@ -271,8 +273,8 @@ footer a{color:var(--muted);text-decoration:none;font-weight:800;margin-left:6px
   <div class="admin-header">
     <div class="container" style="display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;">
       <div>
-        <h2>SKIN CHECK Analytics</h2>
-        <p id="admin-updated">V1.4 LIVE</p>
+        <h2>SKIN INTEL Analytics</h2>
+        <p id="admin-updated">V1.5 LIVE</p>
       </div>
       <div style="display:flex;gap:8px;">
         <button class="btn-blue btn-sm" onclick="loadAnalytics()">Refresh</button>
@@ -286,16 +288,16 @@ footer a{color:var(--muted);text-decoration:none;font-weight:800;margin-left:6px
 </section>
 
 <footer>
-  <span>SKIN CHECK · V1.4 LIVE</span>
+  <span>SKIN CHECK · V1.5 LIVE</span>
   <a href="#" onclick="event.preventDefault();goTo('admin-login')">Admin</a>
 </footer>
 
 <script>
-const APP_VERSION = 'V1.4';
+const APP_VERSION = 'V1.5';
 const API_URL = "https://script.google.com/macros/s/AKfycbwYwe3ZcnoXbYpteN8npCemYhG4OAkg53H16WKzW5RjJZiw6Mg9k6eD9qo4Rucczng9/exec";
 const ADMIN_PIN = '2468';
-const LS_KEY = 'skincheck_v14_answers';
-const LS_SUBMITTED = 'skincheck_v14_submitted';
+const LS_KEY = 'skinintel_v15_answers';
+const LS_SUBMITTED = 'skinintel_v15_submitted';
 const IS_DEMO = API_URL.includes('PASTE_YOUR');
 
 const channelOptions = [
@@ -304,9 +306,10 @@ const channelOptions = [
   'Barbershop','Direct from brand website','As a gift from someone'
 ];
 
+
 const sections = [
   {
-    id:'profile', title:'Before We Start — About You', subtitle:'These answers help us understand which groups have the strongest product need.',
+    id:'profile', title:'Before We Start — About You', subtitle:'Takes about 3 minutes. No wrong answers.',
     questions:[
       {id:'respondent_ageRange', label:'P1. What is your age range?', type:'single', required:true, options:['18–24','25–29','30–34','35–39','40–44','45–50','51 and above','Prefer not to say']},
       {id:'respondent_location', label:'P2. Where are you based?', type:'single', required:true, options:['Metro Manila','Outside Metro Manila — Luzon','Visayas','Mindanao','Prefer not to say']},
@@ -314,38 +317,39 @@ const sections = [
     ]
   },
   {
-    id:'sA', title:'Section A — Your Skin & Grooming Habits', subtitle:'This section identifies the problem men are trying to solve.',
+    id:'sA', title:'Section A — Your Skin & Grooming Habits', subtitle:'',
     questions:[
       {id:'q1_usageFrequency', label:'Q1. How often do you use products on your face?', type:'single', required:true, options:['Daily','A few times a week','Occasionally','Rarely','Never']},
       {id:'q2_productsUsed', label:'Q2. Which products do you currently use on your face?', sub:'Select all that apply.', type:'multi', required:true, none:'None of the above', options:['Bar soap','Facial wash','Moisturizer','Sunscreen / SPF','Serum','Toner','Acne treatment','Aftershave or shaving product','None of the above']},
       {id:'q3_skinConcerns', label:'Q3. What skin concerns do you currently have?', sub:'Select all that apply.', type:'multiOther', otherId:'q3_skinConcernsOther', required:true, none:'I do not have any skin concerns', options:['Oily or shiny face','Pimples or acne','Acne marks or dark spots','Dry or rough skin','Dull or tired-looking skin','Large pores','Blackheads or whiteheads','Uneven skin tone','Darkening from sun exposure','Sensitive skin or irritation','Fine lines or signs of aging','Shaving irritation or razor bumps','I do not have any skin concerns','Other']},
-      {id:'q4_biggestConcern', label:'Q4. What bothers you most about your skin or face appearance?', type:'singleOther', otherId:'q4_biggestConcernOther', required:true, options:['My face gets oily or shiny','I get pimples or breakouts','I have marks, spots, or uneven skin tone','My skin looks tired or dull','My skin feels dry or rough','My skin gets dark from the sun','My face does not look fresh or clean enough','Nothing really bothers me','Other']},
+      {id:'q4_biggestConcern', note:'Of the concerns you just selected, which one matters most to you?', label:'Which of these bothers you most about your skin or face appearance?', sub:'Choose one.', type:'singleOther', otherId:'q4_biggestConcernOther', required:true, skipIf:{id:'q3_skinConcerns', includes:'I do not have any skin concerns'}, options:['My face gets oily or shiny','I get pimples or breakouts','I have marks, spots, or uneven skin tone','My skin looks tired or dull','My skin feels dry or rough','My skin gets dark from the sun','My face does not look fresh or clean enough','Nothing really bothers me','Other']},
       {id:'q5_primaryReason', label:'Q5. What is your main reason for using or wanting to use face care products?', type:'singleOther', otherId:'q5_other', required:true, options:['To look clean and fresh','To feel more confident','To look more professional or presentable','To control oil, pimples, or breakouts','To improve marks, spots, or uneven skin tone','To protect my skin from the sun','My partner, wife, or family recommended it','I am starting to care more about grooming','Other']}
     ]
   },
   {
-    id:'sB', title:'Section B — Brand Familiarity & First Impressions', subtitle:'This section shows which brands are already familiar and how the tested identity feels.',
+    id:'sB', title:'Section B — Brand Familiarity & First Impressions', subtitle:'',
     questions:[
-      {id:'q6_brandAwareness', label:'Q6. Which of the following face care or skincare brands are you familiar with or have used?', sub:'Select all that apply.', type:'multi', required:true, none:'None of these', options:['Nivea Men — Germany','Garnier Men — France','Belo Men — Philippines','Luxe Organix — Philippines','Oxecure — Thailand','Pond’s Men — USA / International','Master — Philippines','Cetaphil — USA / International','None of these']},
+      {id:'q6_brandAwareness', label:'Q6. Which of the following face care or skincare brands are you familiar with or have used?', sub:'Select all that apply.', type:'multi', required:true, none:'None of these', options:['Nivea Men — Germany','Garnier Men — France','Belo Men — Philippines','Luxe Organix — Philippines','Cetaphil — USA / International','Pond’s Men — Unilever / International','Bench Men — Philippines','Human Nature Men — Philippines','None of these']},
       {id:'q6a_otherBrands', label:'Q6A. Since you selected “None of these,” what face care, grooming, or skincare brand do you know or use?', type:'conditionalText', condition:{id:'q6_brandAwareness', includes:'None of these'}, required:true},
-      {id:'q6a_otherBrandOrigin', label:'Q6B. What country do you think that brand is from?', type:'conditionalSingleOther', otherId:'q6a_otherBrandOriginOther', condition:{id:'q6_brandAwareness', includes:'None of these'}, required:true, options:['Philippines','Korea','Japan','Thailand','USA','Germany / Europe','Not sure','Other']},
-      {id:'q7_logoWords', label:'Q7. When you see this brand identity, what 3 words come to mind?', type:'imageText', image:'house-of-adonis-q7.png', required:true},
+      {id:'q6a_otherBrandOrigin', label:'Q6B. What country do you think that brand is from?', type:'conditionalSingleOther', otherId:'q6a_otherBrandOriginOther', conditionAnswered:'q6a_otherBrands', required:true, options:['Philippines','Korea','Japan','Thailand','USA','Germany / Europe','Not sure','Other']},
+      {id:'q7_logoWords', label:'Q7. When you see this brand identity, what 3 words come to mind?', type:'placeholderText', placeholder:'[Place brand name or logo concept here — update before distributing]', required:true},
       {id:'q8_buyer', label:'Q8. Who usually buys your skincare or facial care products?', type:'single', required:true, options:['I buy them myself','My partner or wife buys them','My mother buys them','Another family member buys them','I receive them as gifts','I do not use skincare products']},
       {id:'q9_spendPast6Months', label:'Q9. In the past 6 months, how much have you personally spent on facial skincare or grooming products?', type:'single', required:true, options:['I have not spent money on facial skincare','Under ₱500','₱500–₱1,500','₱1,501–₱3,000','Over ₱3,000']}
     ]
   },
   {
-    id:'sC', title:'Section C — Product Opportunity', subtitle:'This section identifies the right product to create first. SPF is included as one option, not the whole survey.',
+    id:'sC', title:'Section C — Product Opportunity', subtitle:'',
     questions:[
       {id:'q10_productInterest', label:'Q10. Which type of face care product would you be most interested in trying?', type:'single', required:true, options:['Facial wash for oily or acne-prone skin','Lightweight moisturizer','All-in-one serum','Dark spot or acne mark care product','Oil-control product','Moisturizer with SPF','Sunscreen / SPF product','Eye or tired-face product','Shaving irritation care product','I am not interested in trying any']},
       {id:'q11_oneProductChoice', label:'Q11. If you could only add ONE face care product to your routine, what would it be?', type:'single', required:true, options:['Facial wash','Moisturizer','Serum','Sunscreen / SPF','Acne or oil-control product','Dark spot or acne mark product','All-in-one face product','I would not add any']},
       {id:'q12_productIdea', label:'Q12. Which product idea sounds most useful for you?', type:'single', required:true, options:['A simple all-in-one serum that helps with oiliness, dullness, and healthier-looking skin','A matte moisturizer that keeps skin fresh without feeling sticky','A product that helps improve acne marks and uneven-looking skin','A daily SPF product that protects skin without feeling greasy','A facial wash that helps oily and acne-prone skin feel clean','A simple 2-step routine: facial wash plus one leave-on product','None of these']},
+      {id:'q12a_productIdeaIntent', dynamicPicked:'q12_productIdea', label:'How likely are you to try the product idea you just selected?', type:'conditionalSingle', conditionNotEquals:{id:'q12_productIdea', value:'None of these'}, required:true, options:['Very likely','Likely','Neutral','Unlikely','Very unlikely']},
       {id:'q13_easyUseFactors', label:'Q13. What would make a product feel easy enough for you to use every day?', sub:'Choose up to 3.', type:'multiMax', max:3, required:true, options:['It is not sticky','It is not greasy','It absorbs fast','It has no strong fragrance','It does not feel like makeup','It works with oily skin','It is easy to understand','It only takes one step','It can be used before work or going out','It is affordable enough to use daily']},
       {id:'q14_topBenefit', label:'Q14. Which benefit would make you most likely to buy a men’s face care product?', type:'single', required:true, options:['Less oily or shiny face','Fewer pimples or breakouts','Fewer visible marks or dark spots','Fresher and cleaner-looking face','Healthier-looking skin','Protection from sun damage','Smoother-looking skin','More confidence in how I look','Simpler routine']}
     ]
   },
   {
-    id:'sD', title:'Section D — Price, Channel & Trust', subtitle:'This section shows where the product should be sold and what will make men believe it.',
+    id:'sD', title:'Section D — Price, Channel & Trust', subtitle:'',
     questions:[
       {id:'q15_maxPrice', label:'Q15. What is the maximum price you would pay for a face care product that works for your main skin concern?', type:'single', required:true, options:['Under ₱200','₱200–₱399','₱400–₱699','₱700–₱999','₱1,000 or more']},
       {id:'q16_channels', label:'Q16. Where would you prefer to buy skincare or grooming products? Rank your top 3.', sub:'Each rank must be different.', type:'rank3', required:true},
@@ -354,7 +358,7 @@ const sections = [
     ]
   },
   {
-    id:'sE', title:'Section E — Message & Purchase Interest', subtitle:'This section finds the most relevant language and the strongest purchase-intent signal.',
+    id:'sE', title:'Section E — Message & Purchase Interest', subtitle:'',
     questions:[
       {id:'q19_messageChoice', label:'Q19. Which message feels most relevant to you?', type:'single', required:true, options:['For men who want to look clean and fresh without a complicated routine','Helps control oily-looking skin so you look ready for the day','Simple face care for healthier-looking skin','Helps improve the look of marks, dullness, and uneven skin','Daily skincare that does not feel sticky, greasy, or hard to use','None of these']},
       {id:'q20_friendTrialIntent', label:'Q20. If a male friend your age told you he started using this brand and noticed his skin looked better after 3 weeks, how likely would you be to try it?', type:'single', required:true, options:['Very likely','Likely','Neutral','Unlikely','Very unlikely']},
@@ -362,6 +366,7 @@ const sections = [
     ]
   }
 ];
+
 
 let answers = {};
 let currentIndex = 0;
@@ -397,19 +402,34 @@ function renderSection(){
   document.getElementById('progress-fill').style.width = `${pct}%`;
   document.getElementById('back-btn').textContent = currentIndex === 0 ? '← Landing' : '← Back';
   document.getElementById('next-btn').textContent = currentIndex === sections.length-1 ? 'Review Answers →' : 'Next →';
-  const html = `<h2 class="section-title">${sec.title}</h2><p class="section-subtitle">${sec.subtitle}</p>${sec.questions.map(renderQuestion).join('')}`;
+  const html = `<h2 class="section-title">${sec.title}</h2>${sec.subtitle?`<p class="section-subtitle">${sec.subtitle}</p>`:''}${sec.questions.map(renderQuestion).join('')}`;
   document.getElementById('survey-card').innerHTML = html;
 }
+function skipQuestion(q){
+  if(q.skipIf){
+    const v = answers[q.skipIf.id];
+    if(Array.isArray(v)) return v.includes(q.skipIf.includes);
+    return v === q.skipIf.equals;
+  }
+  return false;
+}
 function isConditionMet(q){
-  if(!q.condition) return true;
-  const val = answers[q.condition.id];
-  if(Array.isArray(val)) return val.includes(q.condition.includes);
-  return val === q.condition.equals;
+  if(skipQuestion(q)) return false;
+  if(q.condition){
+    const val = answers[q.condition.id];
+    if(Array.isArray(val)) return val.includes(q.condition.includes);
+    return val === q.condition.equals;
+  }
+  if(q.conditionAnswered) return !!String(answers[q.conditionAnswered] || '').trim();
+  if(q.conditionNotEquals) return answers[q.conditionNotEquals.id] && answers[q.conditionNotEquals.id] !== q.conditionNotEquals.value;
+  return true;
 }
 function renderQuestion(q){
   if(!isConditionMet(q)) return '';
   let content = '';
-  if(q.type === 'single' || q.type === 'singleOther' || q.type === 'conditionalSingleOther'){
+  let note = q.note ? `<div class="soft-note">${q.note}</div>` : '';
+  let picked = q.dynamicPicked && answers[q.dynamicPicked] ? `<div class="soft-note">You picked: ${escHtml(answers[q.dynamicPicked])}</div>` : '';
+  if(q.type === 'single' || q.type === 'singleOther' || q.type === 'conditionalSingleOther' || q.type === 'conditionalSingle'){
     content = `<div class="opt-list">${q.options.map(o=>`
       <button type="button" class="opt-btn ${answers[q.id]===o?'selected':''}" onclick="setSingle('${q.id}', '${escJs(o)}', '${q.otherId||''}')">${o}</button>
     `).join('')}</div>`;
@@ -434,10 +454,13 @@ function renderQuestion(q){
     </div>`;
   } else if(q.type === 'imageText'){
     content = `<img class="brand-img" src="${q.image}" alt="Brand identity image"><textarea class="textarea-input" placeholder="Type 3 words that come to mind..." oninput="setText('${q.id}', this.value)">${escHtml(answers[q.id]||'')}</textarea>`;
+  } else if(q.type === 'placeholderText'){
+    content = `<div class="placeholder-card">${q.placeholder}</div><textarea class="textarea-input" placeholder="Type 3 words that come to mind..." oninput="setText('${q.id}', this.value)">${escHtml(answers[q.id]||'')}</textarea>`;
   } else if(q.type === 'conditionalText'){
     content = `<textarea class="textarea-input" placeholder="Type brand name/s here..." oninput="setText('${q.id}', this.value)">${escHtml(answers[q.id]||'')}</textarea>`;
   }
   return `<div class="q-block" id="block-${q.id}">
+    ${note}${picked}
     <div class="q-label">${q.label} ${q.required?'<span class="required">*</span>':''}</div>
     ${q.sub?`<div class="q-sub">${q.sub}</div>`:''}
     ${content}
@@ -461,6 +484,7 @@ function setRank(i, value){
 function setSingle(id, value, otherId){
   answers[id] = value;
   if(otherId && value !== 'Other') answers[otherId] = '';
+  if(id === 'q12_productIdea' && value === 'None of these') answers.q12a_productIdeaIntent = '';
   saveAnswers();
   renderSection();
 }
@@ -478,10 +502,11 @@ function toggleMulti(id, value, max, none, otherId){
   }
   answers[id] = arr;
   if(otherId && !arr.includes('Other')) answers[otherId]='';
+  if(id === 'q3_skinConcerns' && arr.includes('I do not have any skin concerns')) { answers.q4_biggestConcern = ''; answers.q4_biggestConcernOther = ''; }
   saveAnswers();
   renderSection();
 }
-function setText(id, value){ answers[id] = value; saveAnswers(); }
+function setText(id, value){ answers[id] = value; saveAnswers(); if(id==='q6a_otherBrands') renderSection(); }
 function validateSection(){
   clearErrors();
   const sec = sections[currentIndex];
@@ -539,16 +564,21 @@ function computeScores(){
   let readiness = {'Daily':100,'A few times a week':80,'Occasionally':55,'Rarely':30,'Never':10}[answers.q1_usageFrequency] || 0;
   let price = priceMap[answers.q15_maxPrice] || 0;
   let interest = 0;
-  if(answers.q10_productInterest && answers.q10_productInterest !== 'I am not interested in trying any') interest += 35;
-  if(answers.q11_oneProductChoice && answers.q11_oneProductChoice !== 'I would not add any') interest += 30;
-  if(answers.q12_productIdea && answers.q12_productIdea !== 'None of these') interest += 35;
+  if(answers.q10_productInterest && answers.q10_productInterest !== 'I am not interested in trying any') interest += 25;
+  if(answers.q11_oneProductChoice && answers.q11_oneProductChoice !== 'I would not add any') interest += 25;
+  if(answers.q12_productIdea && answers.q12_productIdea !== 'None of these') interest += 20;
+  let specificIntent = intentMap[answers.q12a_productIdeaIntent] || 0;
+  interest += Math.round(specificIntent * .30);
+  interest = Math.min(100, interest);
   let channel = [answers.q16_channelRank1,answers.q16_channelRank2,answers.q16_channelRank3].filter(Boolean).length * 30;
   channel = Math.min(100, channel);
-  let trial = intentMap[answers.q20_friendTrialIntent] || 0;
-  let opportunity = Math.round(interest*.35 + trial*.30 + price*.15 + readiness*.10 + channel*.10);
+  let wordOfMouth = intentMap[answers.q20_friendTrialIntent] || 0;
+  let opportunity = Math.round(specificIntent*.35 + wordOfMouth*.25 + interest*.20 + price*.10 + readiness*.05 + channel*.05);
   return {
     computed_readinessScore: readiness,
     computed_productInterestScore: interest,
+    computed_specificConceptIntentScore: specificIntent,
+    computed_wordOfMouthIntentScore: wordOfMouth,
     computed_priceScore: price,
     computed_channelScore: channel,
     computed_productOpportunityScore: opportunity
@@ -558,7 +588,7 @@ function computeSegments(){
   const tags = [];
   const concerns = Array.isArray(answers.q3_skinConcerns) ? answers.q3_skinConcerns : [];
   if(['Daily','A few times a week'].includes(answers.q1_usageFrequency)) tags.push('Current Skincare User');
-  if(['Very likely','Likely'].includes(answers.q20_friendTrialIntent)) tags.push('High-Intent Trial User');
+  if(['Very likely','Likely'].includes(answers.q12a_productIdeaIntent) && ['Very likely','Likely'].includes(answers.q20_friendTrialIntent)) tags.push('High-Intent Trial User');
   if(['₱700–₱999','₱1,000 or more'].includes(answers.q15_maxPrice)) tags.push('Premium-Open Buyer');
   if(['Under ₱200','₱200–₱399'].includes(answers.q15_maxPrice)) tags.push('Price-Sensitive Buyer');
   if(concerns.some(x=>x.includes('Oily') || x.includes('Pimples') || x.includes('Acne'))) tags.push('Oil / Acne Concern');
@@ -607,7 +637,7 @@ function arrToText(v){ return Array.isArray(v) ? v.join(', ') : (v || ''); }
 
 function loadAnalytics(){
   const pin = document.getElementById('admin-pin').value || ADMIN_PIN;
-  const cbName = 'skinCheckAnalyticsCb_' + Date.now();
+  const cbName = 'skinIntelAnalyticsCb_' + Date.now();
   window[cbName] = function(data){
     delete window[cbName];
     renderAdmin(data);
@@ -635,6 +665,7 @@ function renderAdmin(data){
     ${chartCard('Product Interest', dist.q10)}
     ${chartCard('Skin Concerns', dist.q3)}
     ${chartCard('Product Ideas', dist.q12)}
+    ${chartCard('Specific Product Intent', dist.q12a)}
     ${chartCard('Trust Drivers', dist.q17)}
     ${chartCard('Channels — All Ranks', dist.q16all)}
     ${chartCard('Messages', dist.q19)}

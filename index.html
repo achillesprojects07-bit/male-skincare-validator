@@ -3,666 +3,485 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>SKIN INTEL | V1.6</title>
-
-<meta name="title" content="SKIN INTEL">
-<meta name="description" content="Takes about 3 minutes. No wrong answers.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://achillesprojects07-bit.github.io/male-skincare-validator/">
+<title>SKIN INTEL | V1.8</title>
 <meta property="og:title" content="SKIN INTEL">
 <meta property="og:description" content="Takes about 3 minutes. No wrong answers.">
 <meta property="og:image" content="https://achillesprojects07-bit.github.io/male-skincare-validator/skin-check-preview.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="SKIN INTEL">
-<meta name="twitter:description" content="Takes about 3 minutes. No wrong answers.">
-<meta name="twitter:image" content="https://achillesprojects07-bit.github.io/male-skincare-validator/skin-check-preview.png">
-
 <style>
 :root{
-  --ink:#101828;
-  --charcoal:#172033;
-  --navy:#173B63;
-  --blue:#2F6FAE;
-  --blue-dark:#1F568C;
-  --blue-light:#EAF2FA;
-  --ivory:#F7F4EF;
-  --paper:#FFFCF7;
-  --line:#D9D3C7;
-  --muted:#667085;
-  --red:#B42318;
-  --green:#0E7C66;
-  --shadow:0 16px 40px rgba(16,24,40,.10);
-  --radius:20px;
+  --ink:#101828;--charcoal:#172033;--navy:#173B63;--blue:#2F6FAE;--blue2:#75A7D8;
+  --pale:#EAF2FA;--paper:#FFFCF7;--bg:#F7F4EF;--line:#D0D5DD;--muted:#667085;
+  --red:#B42318;--green:#087443;--shadow:0 20px 52px rgba(16,24,40,.13);--radius:24px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{
-  font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background:
-    radial-gradient(circle at top left, rgba(47,111,174,.12), transparent 30%),
-    linear-gradient(135deg, #FBF8F2, #EEF3F8);
-  color:var(--ink);
   min-height:100vh;
-  padding-bottom:90px;
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  color:var(--ink);
+  background:
+    radial-gradient(circle at 0% 0%, rgba(47,111,174,.14), transparent 34%),
+    linear-gradient(135deg,#FBF8F2,#EEF3F8);
+  padding-bottom:96px;
 }
 .container{max-width:760px;margin:0 auto;padding:0 18px}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:18px 0 10px;font-size:12px;color:var(--muted);font-weight:850;letter-spacing:.08em;text-transform:uppercase}
+.version{background:white;border:1px solid var(--line);border-radius:999px;padding:5px 10px;color:var(--blue);font-weight:900}
 .screen{display:none}.screen.active{display:block}
-.topline{display:flex;justify-content:space-between;align-items:center;padding:18px 0 8px;color:var(--muted);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
-.version{background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 10px;color:var(--blue-dark);font-weight:800}
-.card{
-  background:rgba(255,252,247,.92);
-  border:1px solid rgba(217,211,199,.75);
-  border-radius:var(--radius);
-  box-shadow:var(--shadow);
-  padding:24px;
-  margin-bottom:16px;
-  backdrop-filter:blur(6px);
-}
-.hero{
-  padding:38px 0 22px;
-}
-.brand-kicker{color:var(--blue-dark);font-size:13px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px}
-.hero h1{font-size:48px;line-height:1;font-weight:950;letter-spacing:-.03em;color:var(--charcoal);margin-bottom:12px}
-.hero p{font-size:17px;line-height:1.65;color:var(--muted);max-width:640px}
-.meta-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
-.meta-pill{border:1px solid #C9D8E8;background:#fff;color:var(--blue-dark);border-radius:999px;padding:8px 12px;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.04em}
-.btn-row{display:flex;gap:12px;margin-top:22px}
-button{
-  border:0;
-  border-radius:14px;
-  padding:14px 18px;
-  font-size:15px;
-  font-weight:850;
-  cursor:pointer;
-  transition:.15s ease;
-}
-.btn-primary{background:var(--charcoal);color:white;flex:1}
-.btn-primary:hover{background:#0B1220}
-.btn-secondary{background:#fff;color:var(--charcoal);border:1.5px solid #CBD5E1;flex:1}
-.btn-secondary:hover{border-color:var(--blue);color:var(--blue-dark)}
-.btn-blue{background:var(--blue);color:white}
-.btn-blue:hover{background:var(--blue-dark)}
-.btn-sm{font-size:12px;padding:8px 12px;border-radius:10px;flex:0}
+.card{background:rgba(255,252,247,.96);border:1px solid rgba(208,213,221,.95);box-shadow:var(--shadow);border-radius:var(--radius);padding:24px;margin-bottom:16px}
+.hero{padding:38px 0 20px}
+.kicker{font-size:13px;font-weight:950;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:12px}
+.hero h1{font-size:50px;line-height:1;font-weight:950;letter-spacing:-.035em;color:var(--charcoal);margin-bottom:12px}
+.hero p{font-size:17px;line-height:1.65;color:var(--muted);max-width:620px}
+.pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
+.pill{border:1px solid #C9D8E8;background:white;color:var(--blue);border-radius:999px;padding:8px 12px;font-size:12px;font-weight:900;letter-spacing:.04em;text-transform:uppercase}
+button{font-family:inherit;border:0;cursor:pointer}
+.btnrow{display:flex;gap:12px;margin-top:18px}
+.btn{border-radius:16px;padding:15px 18px;font-size:15px;font-weight:900;transition:.16s ease}
+.primary{background:var(--charcoal);color:white;flex:1}
+.primary:hover{background:#0B1220}
+.secondary{background:white;color:var(--charcoal);border:1.5px solid #CBD5E1;flex:1}
+.secondary:hover{border-color:var(--blue);color:var(--blue)}
 .progress-wrap{margin:14px 0 16px}
-.progress-label{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);font-weight:800;text-transform:uppercase;letter-spacing:.07em;margin-bottom:8px}
-.progress-track{height:7px;background:#E5E7EB;border-radius:999px;overflow:hidden}
-.progress-fill{height:100%;width:0;background:var(--blue);transition:width .25s ease}
-.section-title{font-size:23px;color:var(--charcoal);font-weight:950;margin-bottom:6px}
-.section-subtitle{font-size:14px;color:var(--muted);line-height:1.5;margin-bottom:18px}
-.q-block{margin-bottom:26px}
-.q-label{font-size:16px;font-weight:850;color:var(--charcoal);line-height:1.45;margin-bottom:10px}
-.q-sub{font-size:13px;color:var(--muted);line-height:1.4;margin-bottom:10px}
-.soft-note{background:#F2F6FB;border:1px solid #D6E3F1;color:#1F568C;border-radius:14px;padding:12px 14px;font-size:14px;line-height:1.45;margin-bottom:10px;font-weight:750}
-.placeholder-card{border:1.5px dashed #9DB7D2;border-radius:18px;background:#F8FBFF;min-height:150px;display:flex;align-items:center;justify-content:center;text-align:center;color:#1F568C;font-weight:850;padding:22px;margin:8px 0 12px}
-.required{color:var(--red)}
-.opt-list{display:flex;flex-direction:column;gap:9px}
-.opt-btn,.chk-btn{
-  width:100%;
-  border:1.5px solid #D7DFEA;
-  background:#fff;
-  color:var(--ink);
-  text-align:left;
-  border-radius:14px;
-  padding:13px 14px;
-  line-height:1.35;
-  cursor:pointer;
+.progress-head{display:flex;justify-content:space-between;gap:10px;font-size:12px;color:var(--muted);font-weight:900;text-transform:uppercase;letter-spacing:.07em;margin-bottom:8px}
+.track{height:8px;background:#E5E7EB;border-radius:999px;overflow:hidden}
+.fill{height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--blue2));transition:width .25s ease}
+.question-card{min-height:430px;display:flex;flex-direction:column}
+.section-title{font-size:14px;color:var(--blue);font-weight:950;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
+.qcount{font-size:12px;color:var(--muted);font-weight:850;margin-bottom:18px}
+.qtitle{font-size:25px;line-height:1.22;font-weight:950;color:var(--charcoal);letter-spacing:-.015em;margin-bottom:8px}
+.qsub{font-size:14px;line-height:1.45;color:var(--muted);margin-bottom:16px}
+.note{background:#F2F6FB;border:1px solid #D6E3F1;color:#1F568C;border-radius:16px;padding:12px 14px;font-size:14px;line-height:1.45;margin:0 0 14px;font-weight:800}
+.options{display:flex;flex-direction:column;gap:10px;margin-top:8px}
+.choice{
+  width:100%;text-align:left;background:white;color:var(--ink);border:1.7px solid #D7DFEA;
+  border-radius:17px;padding:15px 46px 15px 15px;line-height:1.35;font-size:15px;font-weight:760;position:relative;
+  box-shadow:0 4px 12px rgba(16,24,40,.03);transition:transform .12s ease,box-shadow .18s ease,border-color .18s ease,background .18s ease;
+  -webkit-tap-highlight-color:transparent;
 }
-.opt-btn:hover,.chk-btn:hover{border-color:var(--blue);background:#F7FBFF}
-.opt-btn.selected,.chk-btn.selected{
-  border-color:var(--blue);
-  background:var(--blue-light);
-  box-shadow:inset 4px 0 0 var(--blue);
-  font-weight:800;
+.choice:hover{border-color:var(--blue);background:#F7FBFF}
+.choice:active{transform:scale(.985)}
+.choice.selected{border-color:var(--blue);background:linear-gradient(180deg,#F7FBFF,#EAF2FA);box-shadow:inset 4px 0 0 var(--blue),0 10px 24px rgba(47,111,174,.12)}
+.choice.selected::after{content:"✓";position:absolute;right:14px;top:50%;transform:translateY(-50%);width:24px;height:24px;border-radius:999px;background:var(--blue);color:white;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:950}
+.checkline{display:flex;gap:10px;align-items:flex-start}
+.checkbox{width:22px;height:22px;border:1.7px solid #B8C3D1;border-radius:7px;flex:0 0 22px;display:flex;align-items:center;justify-content:center;color:white;margin-top:0}
+.choice.selected .checkbox{background:var(--blue);border-color:var(--blue)}
+.choice.selected .checkbox::after{content:"✓";font-size:13px;font-weight:950}
+.textarea,.input,.select{
+  width:100%;border:1.7px solid #D7DFEA;border-radius:17px;background:white;padding:15px;font-family:inherit;font-size:16px;outline:none;line-height:1.45;
 }
-.chk-btn{display:flex;gap:10px;align-items:flex-start}
-.chk-icon{
-  width:20px;height:20px;border-radius:6px;border:1.5px solid #B8C3D1;
-  display:flex;align-items:center;justify-content:center;
-  color:white;font-size:12px;flex:0 0 20px;margin-top:1px;
+.textarea:focus,.input:focus,.select:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(47,111,174,.12)}
+.textarea{min-height:132px;resize:vertical}
+.otherbox{margin-top:12px}
+.rank-list{display:flex;flex-direction:column;gap:14px;margin-top:10px}
+.rank-row{display:flex;gap:12px;align-items:center}
+.badge{width:38px;height:38px;border-radius:50%;background:var(--charcoal);color:white;display:flex;align-items:center;justify-content:center;font-weight:950;flex:0 0 38px}
+.brand-img{width:100%;border-radius:20px;display:block;margin:8px 0 16px;box-shadow:0 18px 44px rgba(16,24,40,.16);background:#111827}
+.errorbox{display:none;background:#FEF3F2;border:1px solid #FDA29B;color:var(--red);font-size:14px;font-weight:800;border-radius:14px;padding:12px;margin-top:12px}
+.errorbox.show{display:block}
+.navbar{
+  position:sticky;bottom:12px;z-index:10;display:flex;gap:10px;background:rgba(255,252,247,.94);
+  border:1px solid rgba(217,211,199,.85);border-radius:20px;padding:10px;box-shadow:0 18px 40px rgba(16,24,40,.16);backdrop-filter:blur(10px);
 }
-.chk-btn.selected .chk-icon{background:var(--blue);border-color:var(--blue)}
-.text-input,.textarea-input,.select-input{
-  width:100%;
-  border:1.5px solid #D7DFEA;
-  border-radius:14px;
-  padding:13px 14px;
-  font-size:15px;
-  font-family:inherit;
-  background:#fff;
-  outline:none;
-}
-.text-input:focus,.textarea-input:focus,.select-input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(47,111,174,.12)}
-.textarea-input{min-height:96px;resize:vertical;line-height:1.5}
-.rank-row{display:flex;flex-direction:column;gap:12px}
-.rank-item{display:flex;gap:12px;align-items:center}
-.rank-badge{width:34px;height:34px;border-radius:50%;background:var(--charcoal);color:white;display:flex;align-items:center;justify-content:center;font-weight:900;flex:0 0 34px}
-.brand-img{width:100%;border-radius:16px;box-shadow:0 14px 34px rgba(16,24,40,.16);margin:8px 0 12px;background:#111827}
-.field-error{display:none;color:var(--red);font-size:13px;margin-top:7px;font-weight:750}
-.error .field-error{display:block}
-.alert{padding:14px;border-radius:14px;margin-bottom:14px;font-size:14px;line-height:1.45}
-.alert.info{background:var(--blue-light);border:1px solid #CFE0F2;color:var(--blue-dark)}
-.alert.error{background:#FEF3F2;border:1px solid #FDA29B;color:var(--red)}
-.review-section{margin-bottom:18px}
+.navbar .btn{flex:1}
+.review-section{margin-bottom:20px}
 .review-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
-.review-head h3{font-size:14px;text-transform:uppercase;letter-spacing:.07em;color:var(--blue-dark)}
+.review-head h3{font-size:13px;text-transform:uppercase;letter-spacing:.07em;color:var(--blue);font-weight:950}
+.editbtn{border:1px solid var(--line);background:white;border-radius:10px;padding:8px 10px;font-weight:850;color:var(--blue)}
 .review-item{padding:10px 0;border-bottom:1px solid #EAECF0}
 .review-q{font-size:12px;color:var(--muted);margin-bottom:3px}
-.review-a{font-size:14px;font-weight:650;color:var(--ink)}
+.review-a{font-size:14px;font-weight:750;color:var(--ink);line-height:1.35}
 .ty{padding:70px 0;text-align:center}
-.ty-icon{width:72px;height:72px;border-radius:50%;background:var(--blue-light);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:36px;margin:0 auto 18px}
-.ty h2{font-size:30px;color:var(--charcoal);margin-bottom:10px}
-.ty p{color:var(--muted);line-height:1.6;max-width:480px;margin:0 auto 20px}
-.admin-header{background:var(--charcoal);color:white;padding:18px 0;margin-bottom:20px}
-.admin-header h2{font-size:21px}
-.admin-header p{font-size:13px;opacity:.75;margin-top:3px}
-.kpi-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-bottom:16px}
-.kpi-card{background:#fff;border:1px solid #D7DFEA;border-radius:18px;padding:16px}
-.kpi-val{font-size:28px;font-weight:950;color:var(--charcoal)}
-.kpi-lbl{font-size:12px;color:var(--muted);font-weight:800;margin-top:5px}
-.chart-row{display:flex;gap:10px;align-items:center;margin:8px 0}
-.chart-label{flex:0 0 45%;font-size:13px;line-height:1.25}
-.chart-track{flex:1;height:12px;border-radius:999px;background:#E8EEF6;overflow:hidden}
-.chart-fill{height:100%;background:var(--blue)}
-.chart-count{width:34px;text-align:right;font-size:12px;color:var(--muted);font-weight:800}
-footer{text-align:center;color:var(--muted);font-size:12px;padding:24px}
-footer a{color:var(--muted);text-decoration:none;font-weight:800;margin-left:6px}
-.hidden{display:none!important}
+.tyicon{width:76px;height:76px;border-radius:50%;background:var(--pale);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:36px;margin:0 auto 18px}
+.ty h2{font-size:32px;color:var(--charcoal);margin-bottom:10px}
+.ty p{color:var(--muted);line-height:1.6;max-width:500px;margin:0 auto 20px}
+.adminlink{text-align:center;font-size:12px;color:var(--muted);padding:24px}
+.adminlink a{color:var(--muted);font-weight:850;text-decoration:none}
 .spinner{display:inline-block;width:18px;height:18px;border-radius:50%;border:3px solid rgba(255,255,255,.35);border-top-color:white;animation:spin .7s linear infinite;vertical-align:middle;margin-right:8px}
 @keyframes spin{to{transform:rotate(360deg)}}
 @media(max-width:640px){
   .container{padding:0 14px}
   .hero h1{font-size:42px}
   .card{padding:20px}
-  .btn-row{flex-direction:column}
-  .kpi-grid{grid-template-columns:1fr}
-  .chart-label{flex-basis:52%}
+  .qtitle{font-size:22px}
+  .btnrow{flex-direction:column}
 }
 
-/* ===================== V1.6 UX POLISH ===================== */
-.opt-btn,.chk-btn{
-  position:relative;
-  min-height:54px;
-  transform:translateY(0);
-  -webkit-tap-highlight-color:transparent;
-  transition:transform .12s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease;
-}
-.opt-btn:active,.chk-btn:active{ transform:scale(.985); }
-.opt-btn.selected,.chk-btn.selected{
-  border-color:var(--blue);
-  background:linear-gradient(180deg,#F7FBFF,#EAF2FA);
-  box-shadow:inset 4px 0 0 var(--blue), 0 8px 20px rgba(47,111,174,.10);
-}
-.opt-btn.selected::after{
-  content:"✓";
-  position:absolute;
-  right:14px;
-  top:50%;
-  transform:translateY(-50%);
-  width:24px;
-  height:24px;
-  border-radius:999px;
-  background:var(--blue);
-  color:white;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:14px;
-  font-weight:900;
-}
-.q-block{ scroll-margin-top:24px; }
-.q-block.flash{ animation:softPulse .45s ease; }
-@keyframes softPulse{
-  0%{box-shadow:0 0 0 rgba(47,111,174,0)}
-  50%{box-shadow:0 0 0 5px rgba(47,111,174,.10)}
-  100%{box-shadow:0 0 0 rgba(47,111,174,0)}
-}
-.sticky-next{
-  position:sticky;
-  bottom:12px;
-  z-index:10;
-  background:rgba(255,252,247,.94);
-  backdrop-filter:blur(10px);
-  border:1px solid rgba(217,211,199,.85);
-  border-radius:18px;
-  padding:10px;
-  box-shadow:0 18px 40px rgba(16,24,40,.16);
-}
-.progress-fill{ background:linear-gradient(90deg,var(--blue),#75A7D8); }
-.card{ border-color:rgba(203,213,225,.95); }
-
+.peso-wrap{position:relative;margin-top:8px}.peso-prefix{position:absolute;left:15px;top:50%;transform:translateY(-50%);font-weight:950;color:var(--blue)}.peso-input{padding-left:42px!important}.helper{font-size:13px;color:var(--muted);line-height:1.45;margin-top:8px}.email-label{font-size:13px;font-weight:900;color:var(--charcoal);margin:14px 0 6px}
 </style>
 </head>
 <body>
+<div class="container topbar"><div>SKIN INTEL</div><div class="version">V1.8 LIVE</div></div>
 
-<div class="container topline">
-  <div>SKIN INTEL</div>
-  <div class="version">V1.6 LIVE</div>
-</div>
-
-<!-- LANDING -->
-<section id="screen-landing" class="screen active">
+<section id="landing" class="screen active">
   <div class="container hero">
-    <div class="brand-kicker">Takes about 3 minutes. No wrong answers.</div>
+    <div class="kicker">Takes about 3 minutes. No wrong answers.</div>
     <h1>SKIN INTEL</h1>
     <p>A quick check-in about face care, daily habits, buying preferences, and what would feel useful for Filipino men.</p>
-    <div class="meta-row">
-      <div class="meta-pill">3 minutes</div>
-      <div class="meta-pill">Anonymous</div>
-      <div class="meta-pill">No wrong answers</div>
-    </div>
-    <div id="resume-box" class="alert info hidden" style="margin-top:18px;">
-      You started earlier. You can continue or start over.
-      <div class="btn-row" style="margin-top:12px;">
-        <button class="btn-primary" onclick="startSurvey()">Continue</button>
-        <button class="btn-secondary" onclick="startFresh()">Start Over</button>
-      </div>
-    </div>
-    <div class="card" style="margin-top:20px;">
-      <p style="color:var(--muted);line-height:1.6;margin-bottom:18px;">Your answers are anonymous.</p>
-      <button class="btn-primary" style="width:100%;font-size:17px;padding:18px;" onclick="startSurvey()">Start →</button>
+    <div class="pills"><div class="pill">3 minutes</div><div class="pill">Anonymous</div><div class="pill">No wrong answers</div></div>
+    <div class="card" style="margin-top:20px">
+      <p style="color:var(--muted);line-height:1.6;margin-bottom:18px">Your answers are anonymous.</p>
+      <div class="btnrow"><button class="btn primary" onclick="start()">Start →</button><button class="btn secondary" onclick="startFresh()">Start Over</button></div>
     </div>
   </div>
 </section>
 
-<!-- SURVEY -->
-<section id="screen-survey" class="screen">
+<section id="question" class="screen">
   <div class="container">
     <div class="progress-wrap">
-      <div class="progress-label"><span id="progress-label">Section</span><span id="progress-pct">0%</span></div>
-      <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+      <div class="progress-head"><span id="progressSection"></span><span id="progressPct"></span></div>
+      <div class="track"><div class="fill" id="progressFill"></div></div>
     </div>
-    <div id="survey-card" class="card"></div>
-    <div class="btn-row sticky-next">
-      <button id="back-btn" class="btn-secondary" onclick="prevSection()">← Back</button>
-      <button id="next-btn" class="btn-primary" onclick="nextSection()">Next →</button>
+    <div class="card question-card" id="qCard"></div>
+    <div class="navbar">
+      <button class="btn secondary" onclick="back()">← Previous</button>
+      <button class="btn primary" id="nextBtn" onclick="next()">Next →</button>
     </div>
   </div>
 </section>
 
-<!-- REVIEW -->
-<section id="screen-review" class="screen">
+<section id="review" class="screen">
   <div class="container">
-    <div class="card">
-      <h2 class="section-title">Review Your Answers</h2>
-      <p class="section-subtitle">Please check your answers before submitting.</p>
-      <div id="review-content"></div>
-    </div>
-    <div class="card">
-      <div id="submit-error" class="alert error hidden"></div>
-      <button id="submit-btn" class="btn-primary" style="width:100%;font-size:17px;padding:18px;" onclick="submitSurvey()">Submit Response</button>
-    </div>
+    <div class="card"><h2 class="qtitle">Review Your Answers</h2><p class="qsub">Please check before submitting.</p><div id="reviewContent"></div></div>
+    <div class="card"><div class="errorbox" id="submitErr"></div><button class="btn primary" style="width:100%;font-size:17px;padding:18px" id="submitBtn" onclick="submitAnswers()">Submit</button></div>
   </div>
 </section>
 
-<!-- THANK YOU -->
-<section id="screen-thankyou" class="screen">
+<section id="thanks" class="screen">
   <div class="container ty">
-    <div class="ty-icon">✓</div>
+    <div class="tyicon">✓</div>
     <h2>Thank you.</h2>
     <p>Your answers have been recorded and will help shape a better product for Filipino men.</p>
-    <button class="btn-secondary" style="min-width:220px;" onclick="startFresh()">Start Over</button>
+    <button class="btn secondary" style="min-width:220px" onclick="startFresh()">Start Over</button>
   </div>
 </section>
 
-<!-- ADMIN LOGIN -->
-<section id="screen-admin-login" class="screen">
-  <div class="container" style="padding-top:54px;">
-    <div class="card" style="max-width:380px;margin:0 auto;">
-      <h2 class="section-title">Admin Access</h2>
-      <p class="section-subtitle">Enter PIN to view live analytics.</p>
-      <input class="text-input" id="admin-pin" type="password" placeholder="PIN" onkeydown="if(event.key==='Enter')loadAnalytics()">
-      <div id="pin-error" class="field-error">Invalid PIN.</div>
-      <div class="btn-row">
-        <button class="btn-secondary" onclick="goTo('landing')">Cancel</button>
-        <button class="btn-primary" onclick="loadAnalytics()">Open</button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ADMIN DASHBOARD -->
-<section id="screen-admin" class="screen">
-  <div class="admin-header">
-    <div class="container" style="display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;">
-      <div>
-        <h2>SKIN INTEL Analytics</h2>
-        <p id="admin-updated">V1.6 LIVE</p>
-      </div>
-      <div style="display:flex;gap:8px;">
-        <button class="btn-blue btn-sm" onclick="loadAnalytics()">Refresh</button>
-        <button class="btn-secondary btn-sm" onclick="goTo('landing')" style="background:transparent;color:white;border-color:rgba(255,255,255,.35)">Exit</button>
-      </div>
-    </div>
-  </div>
-  <div class="container">
-    <div id="admin-content" class="card">Loading analytics...</div>
-  </div>
-</section>
-
-<footer>
-  <span>SKIN CHECK · V1.6 LIVE</span>
-  <a href="#" onclick="event.preventDefault();goTo('admin-login')">Admin</a>
-</footer>
+<div class="adminlink"><a href="#" onclick="event.preventDefault()">SKIN INTEL · V1.8 LIVE</a></div>
 
 <script>
-const APP_VERSION = 'V1.6';
+const APP_VERSION = 'V1.8';
 const API_URL = "https://script.google.com/macros/s/AKfycbwYwe3ZcnoXbYpteN8npCemYhG4OAkg53H16WKzW5RjJZiw6Mg9k6eD9qo4Rucczng9/exec";
-const ADMIN_PIN = '2468';
-const LS_KEY = 'skinintel_v16_answers';
-const LS_SUBMITTED = 'skinintel_v16_submitted';
-const IS_DEMO = API_URL.includes('PASTE_YOUR');
-
-const channelOptions = [
-  'Shopee','Lazada','TikTok Shop','Watsons','Mercury Drug',
-  'Supermarket','Convenience store','Dermatology clinic',
-  'Barbershop','Direct from brand website','As a gift from someone'
-];
-
-
-const sections = [
-  {
-    id:'profile', title:'Before We Start — About You', subtitle:'Takes about 3 minutes. No wrong answers.',
-    questions:[
-      {id:'respondent_ageRange', label:'P1. What is your age range?', type:'single', required:true, options:['18–24','25–29','30–34','35–39','40–44','45–50','51 and above','Prefer not to say']},
-      {id:'respondent_location', label:'P2. Where are you based?', type:'single', required:true, options:['Metro Manila','Outside Metro Manila — Luzon','Visayas','Mindanao','Prefer not to say']},
-      {id:'respondent_profession', label:'P3. What best describes your work or daily lifestyle?', type:'singleOther', otherId:'respondent_professionOther', required:true, options:['Office / Corporate employee','Business owner / Self-employed','Sales / Client-facing work','Field work / Operations','Healthcare / Medical','Service industry / Hospitality / Retail','Creative / Media / Marketing','Student','Currently not working','Other','Prefer not to say']}
-    ]
-  },
-  {
-    id:'sA', title:'Section A — Your Skin & Grooming Habits', subtitle:'',
-    questions:[
-      {id:'q1_usageFrequency', label:'Q1. How often do you use products on your face?', type:'single', required:true, options:['Daily','A few times a week','Occasionally','Rarely','Never']},
-      {id:'q2_productsUsed', label:'Q2. Which products do you currently use on your face?', sub:'Select all that apply.', type:'multi', required:true, none:'None of the above', options:['Bar soap','Facial wash','Moisturizer','Sunscreen / SPF','Serum','Toner','Acne treatment','Aftershave or shaving product','None of the above']},
-      {id:'q3_skinConcerns', label:'Q3. What skin concerns do you currently have?', sub:'Select all that apply.', type:'multiOther', otherId:'q3_skinConcernsOther', required:true, none:'I do not have any skin concerns', options:['Oily or shiny face','Pimples or acne','Acne marks or dark spots','Dry or rough skin','Dull or tired-looking skin','Large pores','Blackheads or whiteheads','Uneven skin tone','Darkening from sun exposure','Sensitive skin or irritation','Fine lines or signs of aging','Shaving irritation or razor bumps','I do not have any skin concerns','Other']},
-      {id:'q4_biggestConcern', note:'Of the concerns you just selected, which one matters most to you?', label:'Which of these bothers you most about your skin or face appearance?', sub:'Choose one.', type:'singleOther', otherId:'q4_biggestConcernOther', required:true, skipIf:{id:'q3_skinConcerns', includes:'I do not have any skin concerns'}, options:['My face gets oily or shiny','I get pimples or breakouts','I have marks, spots, or uneven skin tone','My skin looks tired or dull','My skin feels dry or rough','My skin gets dark from the sun','My face does not look fresh or clean enough','Nothing really bothers me','Other']},
-      {id:'q5_primaryReason', label:'Q5. What is your main reason for using or wanting to use face care products?', type:'singleOther', otherId:'q5_other', required:true, options:['To look clean and fresh','To feel more confident','To look more professional or presentable','To control oil, pimples, or breakouts','To improve marks, spots, or uneven skin tone','To protect my skin from the sun','My partner, wife, or family recommended it','I am starting to care more about grooming','Other']}
-    ]
-  },
-  {
-    id:'sB', title:'Section B — Brand Familiarity & First Impressions', subtitle:'',
-    questions:[
-      {id:'q6_brandAwareness', label:'Q6. Which of the following face care or skincare brands are you familiar with or have used?', sub:'Select all that apply.', type:'multi', required:true, none:'None of these', options:['Nivea Men — Germany','Garnier Men — France','Belo Men — Philippines','Luxe Organix — Philippines','Cetaphil — USA / International','Pond’s Men — Unilever / International','Bench Men — Philippines','Human Nature Men — Philippines','None of these']},
-      {id:'q6a_otherBrands', label:'Q6A. Since you selected “None of these,” what face care, grooming, or skincare brand do you know or use?', type:'conditionalText', condition:{id:'q6_brandAwareness', includes:'None of these'}, required:true},
-      {id:'q6a_otherBrandOrigin', label:'Q6B. What country do you think that brand is from?', type:'conditionalSingleOther', otherId:'q6a_otherBrandOriginOther', conditionAnswered:'q6a_otherBrands', required:true, options:['Philippines','Korea','Japan','Thailand','USA','Germany / Europe','Not sure','Other']},
-      {id:'q7_logoWords', label:'Q7. When you see this brand identity, what 3 words come to mind?', type:'imageText', image:'adonis-q7-brand-identity.jpg', required:true},
-      {id:'q8_buyer', label:'Q8. Who usually buys your skincare or facial care products?', type:'single', required:true, options:['I buy them myself','My partner or wife buys them','My mother buys them','Another family member buys them','I receive them as gifts','I do not use skincare products']},
-      {id:'q9_spendPast6Months', label:'Q9. In the past 6 months, how much have you personally spent on facial skincare or grooming products?', type:'single', required:true, options:['I have not spent money on facial skincare','Under ₱500','₱500–₱1,500','₱1,501–₱3,000','Over ₱3,000']}
-    ]
-  },
-  {
-    id:'sC', title:'Section C — Product Opportunity', subtitle:'',
-    questions:[
-      {id:'q10_productInterest', label:'Q10. Which type of face care product would you be most interested in trying?', type:'single', required:true, options:['Facial wash for oily or acne-prone skin','Lightweight moisturizer','All-in-one serum','Dark spot or acne mark care product','Oil-control product','Moisturizer with SPF','Sunscreen / SPF product','Eye or tired-face product','Shaving irritation care product','I am not interested in trying any']},
-      {id:'q11_oneProductChoice', label:'Q11. If you could only add ONE face care product to your routine, what would it be?', type:'single', required:true, options:['Facial wash','Moisturizer','Serum','Sunscreen / SPF','Acne or oil-control product','Dark spot or acne mark product','All-in-one face product','I would not add any']},
-      {id:'q12_productIdea', label:'Q12. Which product idea sounds most useful for you?', type:'single', required:true, options:['A simple all-in-one serum that helps with oiliness, dullness, and healthier-looking skin','A matte moisturizer that keeps skin fresh without feeling sticky','A product that helps improve acne marks and uneven-looking skin','A daily SPF product that protects skin without feeling greasy','A facial wash that helps oily and acne-prone skin feel clean','A simple 2-step routine: facial wash plus one leave-on product','None of these']},
-      {id:'q12a_productIdeaIntent', dynamicPicked:'q12_productIdea', label:'How likely are you to try the product idea you just selected?', type:'conditionalSingle', conditionNotEquals:{id:'q12_productIdea', value:'None of these'}, required:true, options:['Very likely','Likely','Neutral','Unlikely','Very unlikely']},
-      {id:'q13_easyUseFactors', label:'Q13. What would make a product feel easy enough for you to use every day?', sub:'Choose up to 3.', type:'multiMax', max:3, required:true, options:['It is not sticky','It is not greasy','It absorbs fast','It has no strong fragrance','It does not feel like makeup','It works with oily skin','It is easy to understand','It only takes one step','It can be used before work or going out','It is affordable enough to use daily']},
-      {id:'q14_topBenefit', label:'Q14. Which benefit would make you most likely to buy a men’s face care product?', type:'single', required:true, options:['Less oily or shiny face','Fewer pimples or breakouts','Fewer visible marks or dark spots','Fresher and cleaner-looking face','Healthier-looking skin','Protection from sun damage','Smoother-looking skin','More confidence in how I look','Simpler routine']}
-    ]
-  },
-  {
-    id:'sD', title:'Section D — Price, Channel & Trust', subtitle:'',
-    questions:[
-      {id:'q15_maxPrice', label:'Q15. What is the maximum price you would pay for a face care product that works for your main skin concern?', type:'single', required:true, options:['Under ₱200','₱200–₱399','₱400–₱699','₱700–₱999','₱1,000 or more']},
-      {id:'q16_channels', label:'Q16. Where would you prefer to buy skincare or grooming products? Rank your top 3.', sub:'Each rank must be different.', type:'rank3', required:true},
-      {id:'q17_confidenceDrivers', label:'Q17. What would most increase your confidence in trying a new men’s skincare product?', sub:'Choose up to 3.', type:'multiMax', max:3, required:true, options:['Dermatologist recommendation','Recommendation from a friend','Recommendation from a partner or wife','Review from a real man around my age','Before-and-after photos from real users','Clear ingredient list','Available in Watsons, Mercury Drug, or a trusted store','Affordable trial size','Money-back guarantee']},
-      {id:'q18_socialTrustContent', label:'Q18. What type of social media content about skincare would make you trust a brand enough to consider buying?', sub:'Choose up to 3.', type:'multiMax', max:3, required:true, none:'None — I do not get skincare info from social media', options:['A real man around my age showing his results','A dermatologist explaining the product','A simple before-and-after transformation','A short routine demo','Product comparison or review','Funny or relatable content','A celebrity or influencer endorsement','None — I do not get skincare info from social media']}
-    ]
-  },
-  {
-    id:'sE', title:'Section E — Message & Purchase Interest', subtitle:'',
-    questions:[
-      {id:'q19_messageChoice', label:'Q19. Which message feels most relevant to you?', type:'single', required:true, options:['For men who want to look clean and fresh without a complicated routine','Helps control oily-looking skin so you look ready for the day','Simple face care for healthier-looking skin','Helps improve the look of marks, dullness, and uneven skin','Daily skincare that does not feel sticky, greasy, or hard to use','None of these']},
-      {id:'q20_friendTrialIntent', label:'Q20. If a male friend your age told you he started using this brand and noticed his skin looked better after 3 weeks, how likely would you be to try it?', type:'single', required:true, options:['Very likely','Likely','Neutral','Unlikely','Very unlikely']},
-      {id:'q21_barriers', label:'Q21. What would stop you from trying a men’s skincare product?', sub:'Choose up to 3.', type:'multiMax', max:3, required:true, none:'Nothing would stop me', options:['I do not know what product to use','I think skincare is too complicated','I do not want anything sticky or greasy','I do not want to spend too much','I am worried it might cause pimples or irritation','I do not trust skincare claims','I do not think I need it','I feel embarrassed buying skincare','I might forget to use it daily','Nothing would stop me']}
-    ]
-  }
-];
-
+const STORAGE_KEY = 'skinintel_v18_answers';
+const INDEX_KEY = 'skinintel_v18_index';
+const RAW_SECTIONS = [{"id": "profile", "title": "Before We Start — About You", "subtitle": "Takes about 3 minutes. No wrong answers.", "questions": [{"id": "respondent_ageRange", "label": "P1. What is your age range?", "type": "single", "required": true, "options": ["18–24", "25–29", "30–34", "35–39", "40–44", "45–50", "51 and above", "Prefer not to say"]}, {"id": "respondent_location", "label": "P2. Where are you based?", "type": "single", "required": true, "options": ["Metro Manila", "Outside Metro Manila — Luzon", "Visayas", "Mindanao", "Prefer not to say"]}, {"id": "respondent_profession", "label": "P3. What best describes your work or daily lifestyle?", "type": "singleOther", "otherId": "respondent_professionOther", "required": true, "options": ["Office / Corporate employee", "Business owner / Self-employed", "Sales / Client-facing work", "Field work / Operations", "Healthcare / Medical", "Service industry / Hospitality / Retail", "Creative / Media / Marketing", "Student", "Currently not working", "Other", "Prefer not to say"]}]}, {"id": "sA", "title": "Section A — Your Skin & Grooming Habits", "subtitle": "", "questions": [{"id": "q1_usageFrequency", "label": "Q1. How often do you use products on your face?", "type": "single", "required": true, "options": ["Daily", "A few times a week", "Occasionally", "Rarely", "Never"]}, {"id": "q2_productsUsed", "label": "Q2. Which products do you currently use on your face?", "sub": "Select all that apply.", "type": "multi", "required": true, "none": "None of the above", "options": ["Bar soap", "Facial wash", "Moisturizer", "Sunscreen / SPF", "Serum", "Toner", "Acne treatment", "Aftershave or shaving product", "None of the above"]}, {"id": "q3_skinConcerns", "label": "Q3. What skin concerns do you currently have?", "sub": "Select all that apply.", "type": "multiOther", "otherId": "q3_skinConcernsOther", "required": true, "none": "I do not have any skin concerns", "options": ["Oily or shiny face", "Pimples or acne", "Acne marks or dark spots", "Dry or rough skin", "Dull or tired-looking skin", "Large pores", "Blackheads or whiteheads", "Uneven skin tone", "Darkening from sun exposure", "Sensitive skin or irritation", "Fine lines or signs of aging", "Shaving irritation or razor bumps", "I do not have any skin concerns", "Other"]}, {"id": "q4_biggestConcern", "note": "Of the concerns you just selected, which one matters most to you?", "label": "Which of these bothers you most about your skin or face appearance?", "sub": "Choose one.", "type": "singleOther", "otherId": "q4_biggestConcernOther", "required": true, "skipIf": {"id": "q3_skinConcerns", "includes": "I do not have any skin concerns"}, "options": ["My face gets oily or shiny", "I get pimples or breakouts", "I have marks, spots, or uneven skin tone", "My skin looks tired or dull", "My skin feels dry or rough", "My skin gets dark from the sun", "My face does not look fresh or clean enough", "Nothing really bothers me", "Other"]}, {"id": "q5_primaryReason", "label": "Q5. What is your main reason for using or wanting to use face care products?", "type": "singleOther", "otherId": "q5_other", "required": true, "options": ["To look clean and fresh", "To feel more confident", "To look more professional or presentable", "To control oil, pimples, or breakouts", "To improve marks, spots, or uneven skin tone", "To protect my skin from the sun", "My partner, wife, or family recommended it", "I am starting to care more about grooming", "Other"]}]}, {"id": "sB", "title": "Section B — Brand Familiarity & First Impressions", "subtitle": "", "questions": [{"id": "q6_brandAwareness", "label": "Q6. Which of the following face care or skincare brands are you familiar with or have used?", "sub": "Select all that apply.", "type": "multi", "required": true, "none": "None of these", "options": ["Nivea Men — Germany", "Garnier Men — France", "Belo Men — Philippines", "Luxe Organix — Philippines", "Cetaphil — USA / International", "Pond’s Men — Unilever / International", "Bench Men — Philippines", "Human Nature Men — Philippines", "None of these"]}, {"id": "q6a_otherBrands", "label": "Q6A. Since you selected “None of these,” what face care, grooming, or skincare brand do you know or use?", "type": "text", "condition": {"id": "q6_brandAwareness", "includes": "None of these"}, "required": true}, {"id": "q6a_otherBrandOrigin", "label": "Q6B. What country do you think that brand is from?", "type": "singleOther", "otherId": "q6a_otherBrandOriginOther", "conditionAnswered": "q6a_otherBrands", "required": true, "options": ["Philippines", "Korea", "Japan", "Thailand", "USA", "Germany / Europe", "Not sure", "Other"]}, {"id": "q7_logoWords", "label": "Q7. When you see this brand identity, what 3 words come to mind?", "type": "imageText", "image": "adonis-q7-brand-identity.jpg", "required": true}, {"id": "q8_buyer", "label": "Q8. Who usually buys your skincare or facial care products?", "type": "single", "required": true, "options": ["I buy them myself", "My partner or wife buys them", "My mother buys them", "Another family member buys them", "I receive them as gifts", "I do not use skincare products"]}, {"id": "q9_spendPast6Months", "label": "Q9. In the past 6 months, how much have you personally spent on facial skincare or grooming products?", "type": "single", "required": true, "options": ["I have not spent money on facial skincare", "Under ₱500", "₱500–₱1,500", "₱1,501–₱3,000", "Over ₱3,000"]}]}, {"id": "sC", "title": "Section C — Product Opportunity", "subtitle": "", "questions": [{"id": "q10_productInterest", "label": "Q10. Which type of face care product would you be most interested in trying?", "type": "single", "required": true, "options": ["Facial wash for oily or acne-prone skin", "Lightweight moisturizer", "All-in-one serum", "Dark spot or acne mark care product", "Oil-control product", "Moisturizer with SPF", "Sunscreen / SPF product", "Eye or tired-face product", "Shaving irritation care product", "I am not interested in trying any"]}, {"id": "q11_oneProductChoice", "label": "Q11. If you could only add ONE face care product to your routine, what would it be?", "type": "single", "required": true, "options": ["Facial wash", "Moisturizer", "Serum", "Sunscreen / SPF", "Acne or oil-control product", "Dark spot or acne mark product", "All-in-one face product", "I would not add any"]}, {"id": "q12_productIdea", "label": "Q12. Which product idea sounds most useful for you?", "type": "single", "required": true, "options": ["A simple all-in-one serum that helps with oiliness, dullness, and healthier-looking skin", "A matte moisturizer that keeps skin fresh without feeling sticky", "A product that helps improve acne marks and uneven-looking skin", "A daily SPF product that protects skin without feeling greasy", "A facial wash that helps oily and acne-prone skin feel clean", "A simple 2-step routine: facial wash plus one leave-on product", "None of these"]}, {"id": "q12a_productIdeaIntent", "dynamicPicked": "q12_productIdea", "label": "How likely are you to try the product idea you just selected?", "type": "single", "conditionNotEquals": {"id": "q12_productIdea", "value": "None of these"}, "required": true, "options": ["Very likely", "Likely", "Neutral", "Unlikely", "Very unlikely"]}, {"id": "q13_easyUseFactors", "label": "Q13. What would make a product feel easy enough for you to use every day?", "sub": "Choose up to 3.", "type": "multiMax", "max": 3, "required": true, "options": ["It is not sticky", "It is not greasy", "It absorbs fast", "It has no strong fragrance", "It does not feel like makeup", "It works with oily skin", "It is easy to understand", "It only takes one step", "It can be used before work or going out", "It is affordable enough to use daily"]}, {"id": "q14_topBenefit", "label": "Q14. Which benefit would make you most likely to buy a men’s face care product?", "type": "single", "required": true, "options": ["Less oily or shiny face", "Fewer pimples or breakouts", "Fewer visible marks or dark spots", "Fresher and cleaner-looking face", "Healthier-looking skin", "Protection from sun damage", "Smoother-looking skin", "More confidence in how I look", "Simpler routine"]}]}, {"id": "sD", "title": "Section D — Price, Channel & Trust", "subtitle": "", "questions": [{"id": "q15_maxPrice", "label": "Q15. What is the maximum price you would pay for a face care product that works for your main skin concern?", "type": "single", "required": true, "options": ["Under ₱200", "₱200–₱399", "₱400–₱699", "₱700–₱999", "₱1,000 or more"]}, {"id": "q16_channels", "label": "Q16. Where would you prefer to buy skincare or grooming products? Rank your top 3.", "sub": "Each rank must be different.", "type": "rank3", "required": true}, {"id": "q17_confidenceDrivers", "label": "Q17. What would most increase your confidence in trying a new men’s skincare product?", "sub": "Choose up to 3.", "type": "multiMax", "max": 3, "required": true, "options": ["Dermatologist recommendation", "Recommendation from a friend", "Recommendation from a partner or wife", "Review from a real man around my age", "Before-and-after photos from real users", "Clear ingredient list", "Available in Watsons, Mercury Drug, or a trusted store", "Affordable trial size", "Money-back guarantee"]}, {"id": "q18_socialTrustContent", "label": "Q18. What type of social media content about skincare would make you trust a brand enough to consider buying?", "sub": "Choose up to 3.", "type": "multiMax", "max": 3, "none": "None — I do not get skincare info from social media", "required": true, "options": ["A real man around my age showing his results", "A dermatologist explaining the product", "A simple before-and-after transformation", "A short routine demo", "Product comparison or review", "Funny or relatable content", "A celebrity or influencer endorsement", "None — I do not get skincare info from social media"]}]}, {"id": "sE", "title": "Section E — Message & Purchase Interest", "subtitle": "", "questions": [{"id": "q19_messageChoice", "label": "Q19. Which message feels most relevant to you?", "type": "single", "required": true, "options": ["For men who want to look clean and fresh without a complicated routine", "Helps control oily-looking skin so you look ready for the day", "Simple face care for healthier-looking skin", "Helps improve the look of marks, dullness, and uneven skin", "Daily skincare that does not feel sticky, greasy, or hard to use", "None of these"]}, {"id": "q20_friendTrialIntent", "label": "Q20. If a male friend your age told you he started using this brand and noticed his skin looked better after 3 weeks, how likely would you be to try it?", "type": "single", "required": true, "options": ["Very likely", "Likely", "Neutral", "Unlikely", "Very unlikely"]}, {"id": "q21_barriers", "label": "Q21. What would stop you from trying a men’s skincare product?", "sub": "Choose up to 3.", "type": "multiMax", "max": 3, "none": "Nothing would stop me", "required": true, "options": ["I do not know what product to use", "I think skincare is too complicated", "I do not want anything sticky or greasy", "I do not want to spend too much", "I am worried it might cause pimples or irritation", "I do not trust skincare claims", "I do not think I need it", "I feel embarrassed buying skincare", "I might forget to use it daily", "Nothing would stop me"]}]}, {"id": "sF", "title": "Section F — A Few Final Questions", "subtitle": "", "introNote": "Almost done. These last few questions help us plan pricing and launch timing.", "questions": [{"id": "q22_priceAcceptance", "label": "Q22. Imagine a complete face care kit — a cleanser, a treatment serum, and a daily moisturizer with SPF — made specifically for Filipino men's skin in our climate. If this kit existed today, what is the most you would be willing to pay for it?", "type": "single", "required": true, "options": ["Under ₱500", "₱500–₱999", "₱1,000–₱1,499", "₱1,500–₱1,999", "₱2,000–₱2,499", "₱2,500–₱2,999", "₱3,000 or more", "I would not pay for this kind of kit"]}, {"id": "q23_maxBudgetOpenText", "label": "Q23. What is the absolute maximum you would personally spend on a complete face care kit like this, even if you really wanted it?", "type": "pesoNumber", "required": true, "placeholder": "Enter an amount in pesos", "helper": "There's no wrong answer — just your honest ceiling."}, {"id": "q24_incomeLevel", "label": "Q24. What is your approximate monthly personal income?", "type": "single", "required": true, "options": ["Below ₱25,000", "₱25,000–₱49,999", "₱50,000–₱99,999", "₱100,000–₱199,999", "₱200,000 or more", "Prefer not to say"]}, {"id": "q25_purchaseIntent3mo", "label": "Q25. If this kit launched at a price you found acceptable, would you buy it within the next 3 months?", "type": "single", "required": true, "options": ["Yes, definitely", "Yes, probably", "Not sure", "No, probably not", "No, definitely not"]}, {"id": "q26_preOrderCommitment", "label": "Q26. Would you pre-order this kit right now — meaning you pay upfront today and receive the product once it launches?", "type": "single", "required": true, "options": ["Yes, I would pre-order", "I would need more information first", "No, I would rather wait until it launches", "No, I am not interested"]}, {"id": "q27_waitlistOptIn", "label": "Q27. Would you like to join an early access list for launch updates and a launch discount?", "type": "singleEmail", "emailId": "q27_waitlistEmail", "emailLabel": "Email address", "required": true, "options": ["Yes", "No, not right now"]}, {"id": "q28_giftOccasions", "label": "Q28. When would you be most likely to buy premium men's skincare as a gift for another man?", "sub": "Choose up to 2.", "type": "multiMax", "max": 2, "none": "I would not buy this as a gift", "required": true, "options": ["Father's Day", "Christmas or the holiday season", "A birthday", "Valentine's Day", "An anniversary", "Year-end company gift-giving", "I would not buy this as a gift"]}, {"id": "q29_corporateGiftInterest", "label": "Q29. Would you be interested in receiving premium men's skincare as a year-end gift from your employer?", "type": "single", "required": true, "options": ["Yes, definitely", "Yes, probably", "Neutral", "No, probably not", "No, definitely not"]}]}];
+const CHANNELS = ['Shopee','Lazada','TikTok Shop','Watsons','Mercury Drug','Supermarket','Convenience store','Dermatology clinic','Barbershop','Direct from brand website','As a gift from someone'];
 
 let answers = {};
-let currentIndex = 0;
+let current = 0;
 
-function loadAnswers(){
-  try{ answers = JSON.parse(localStorage.getItem(LS_KEY) || '{}') || {}; }catch(e){ answers = {}; }
+function flattenQuestions(){
+  const out = [];
+  RAW_SECTIONS.forEach(sec => {
+    sec.questions.forEach(q => out.push(Object.assign({sectionId:sec.id, sectionTitle:sec.title}, q)));
+  });
+  return out;
 }
-function saveAnswers(){ try{ localStorage.setItem(LS_KEY, JSON.stringify(answers)); }catch(e){} }
+const ALL_QUESTIONS = flattenQuestions();
 
-function clearAllSkinIntelStorage(){
+function visibleQuestions(){
+  return ALL_QUESTIONS.filter(q => isVisible(q));
+}
+
+function isVisible(q){
+  if(q.skipIf){
+    const v = answers[q.skipIf.id];
+    if(Array.isArray(v) && v.includes(q.skipIf.includes)) return false;
+    if(v === q.skipIf.equals) return false;
+  }
+  if(q.condition){
+    const v = answers[q.condition.id];
+    if(Array.isArray(v)) return v.includes(q.condition.includes);
+    return v === q.condition.equals;
+  }
+  if(q.conditionAnswered) return !!String(answers[q.conditionAnswered] || '').trim();
+  if(q.conditionNotEquals){
+    const v = answers[q.conditionNotEquals.id];
+    return !!v && v !== q.conditionNotEquals.value;
+  }
+  return true;
+}
+
+function load(){
+  try{ answers = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}') || {}; }catch(e){ answers = {}; }
+  current = Number(localStorage.getItem(INDEX_KEY) || 0) || 0;
+}
+function save(){
+  try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(answers)); localStorage.setItem(INDEX_KEY, String(current)); }catch(e){}
+}
+function clearAll(){
   try{
     const remove = [];
     for(let i=0;i<localStorage.length;i++){
       const k = localStorage.key(i);
-      if(k && (
-        k.toLowerCase().includes('skinintel') ||
-        k.toLowerCase().includes('skincheck') ||
-        k.toLowerCase().includes('skin_check') ||
-        k.toLowerCase().includes('skin-intel')
-      )) remove.push(k);
+      if(k && (k.toLowerCase().includes('skinintel') || k.toLowerCase().includes('skincheck') || k.toLowerCase().includes('skin_check'))) remove.push(k);
     }
     remove.forEach(k=>localStorage.removeItem(k));
   }catch(e){}
 }
-
-function markAnsweredBlock(id){
-  const block = document.getElementById('block-'+id);
-  if(!block) return;
-  block.classList.add('flash');
-  setTimeout(()=>block.classList.remove('flash'), 500);
-}
-
-function isQuestionAnswered(id){
-  if(id === 'q16_channels'){
-    const vals = [answers.q16_channelRank1, answers.q16_channelRank2, answers.q16_channelRank3].filter(Boolean);
-    return vals.length === 3 && (new Set(vals)).size === 3;
-  }
-  const val = answers[id];
-  return !(val === undefined || val === null || val === '' || (Array.isArray(val) && val.length === 0));
-}
-
-function scrollToNextUnanswered(currentId){
-  setTimeout(()=>{
-    const blocks = Array.from(document.querySelectorAll('.q-block'));
-    const idx = blocks.findIndex(b=>b.id === 'block-'+currentId);
-    const nextBlocks = idx >= 0 ? blocks.slice(idx+1) : blocks;
-    let target = null;
-    for(const b of nextBlocks){
-      const id = b.id.replace('block-','');
-      if(!isQuestionAnswered(id)){ target = b; break; }
-    }
-    if(target) target.scrollIntoView({behavior:'smooth', block:'center'});
-  }, 180);
-}
-function goTo(id){
+function screen(id){
   document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
-  document.getElementById('screen-'+id).classList.add('active');
-  window.scrollTo(0,0);
+  document.getElementById(id).classList.add('active');
+  window.scrollTo({top:0, behavior:'smooth'});
 }
-function startSurvey(){ loadAnswers(); currentIndex = Math.min(currentIndex || 0, sections.length-1); goTo('survey'); renderSection(); }
-function startFresh(){
-  clearAllSkinIntelStorage();
-  answers = {};
-  currentIndex = 0;
-  document.querySelectorAll('.selected').forEach(x=>x.classList.remove('selected'));
-  document.querySelectorAll('input, textarea, select').forEach(el=>{
-    if(el.tagName === 'SELECT') el.selectedIndex = 0;
-    else el.value = '';
-  });
-  const rb = document.getElementById('resume-box');
-  if(rb) rb.classList.add('hidden');
-  goTo('landing');
+function start(){ load(); current = Math.min(current, visibleQuestions().length - 1); screen('question'); render(); }
+function startFresh(){ clearAll(); answers = {}; current = 0; screen('landing'); }
+function back(){ if(current > 0){ current--; save(); render(); } else screen('landing'); }
+
+function next(){
+  const q = visibleQuestions()[current];
+  if(!q) return;
+  if(!validate(q)) return;
+  const qs = visibleQuestions();
+  if(current < qs.length - 1){ current++; save(); render(); }
+  else { save(); renderReview(); screen('review'); }
 }
-function prevSection(){ if(currentIndex>0){currentIndex--; renderSection();} else goTo('landing'); }
-function nextSection(){
-  if(!validateSection()) return;
-  if(currentIndex < sections.length-1){ currentIndex++; renderSection(); }
-  else { renderReview(); goTo('review'); }
+
+function autoNext(){
+  setTimeout(()=>{
+    const q = visibleQuestions()[current];
+    if(q && validate(q, true)) next();
+  }, 220);
 }
-function renderSection(){
-  const sec = sections[currentIndex];
-  const pct = Math.round(((currentIndex+1)/sections.length)*100);
-  document.getElementById('progress-label').textContent = `${sec.title}`;
-  document.getElementById('progress-pct').textContent = `${pct}%`;
-  document.getElementById('progress-fill').style.width = `${pct}%`;
-  document.getElementById('back-btn').textContent = currentIndex === 0 ? '← Landing' : '← Back';
-  document.getElementById('next-btn').textContent = currentIndex === sections.length-1 ? 'Review Answers →' : 'Next →';
-  const html = `<h2 class="section-title">${sec.title}</h2>${sec.subtitle?`<p class="section-subtitle">${sec.subtitle}</p>`:''}${sec.questions.map(renderQuestion).join('')}`;
-  document.getElementById('survey-card').innerHTML = html;
-}
-function skipQuestion(q){
-  if(q.skipIf){
-    const v = answers[q.skipIf.id];
-    if(Array.isArray(v)) return v.includes(q.skipIf.includes);
-    return v === q.skipIf.equals;
+
+function render(){
+  const qs = visibleQuestions();
+  if(current >= qs.length) current = Math.max(0, qs.length - 1);
+  const q = qs[current];
+  if(!q) return;
+  const pct = Math.round(((current+1)/qs.length)*100);
+  document.getElementById('progressSection').textContent = q.sectionTitle;
+  document.getElementById('progressPct').textContent = `${current+1} / ${qs.length}`;
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('nextBtn').textContent = current === qs.length - 1 ? 'Review →' : 'Next →';
+
+  const card = document.getElementById('qCard');
+  card.innerHTML = '';
+  const section = el('div','section-title',q.sectionTitle);
+  const count = el('div','qcount',`Question ${current+1} of ${qs.length}`);
+  card.append(section,count);
+
+  if(q.note) card.append(el('div','note',q.note));
+  const secObj = RAW_SECTIONS.find(s => s.id === q.sectionId);
+  if(secObj && secObj.introNote){
+    const firstVisibleInSection = visibleQuestions().find(x => x.sectionId === q.sectionId);
+    if(firstVisibleInSection && firstVisibleInSection.id === q.id) card.append(el('div','note',secObj.introNote));
   }
-  return false;
-}
-function isConditionMet(q){
-  if(skipQuestion(q)) return false;
-  if(q.condition){
-    const val = answers[q.condition.id];
-    if(Array.isArray(val)) return val.includes(q.condition.includes);
-    return val === q.condition.equals;
-  }
-  if(q.conditionAnswered) return !!String(answers[q.conditionAnswered] || '').trim();
-  if(q.conditionNotEquals) return answers[q.conditionNotEquals.id] && answers[q.conditionNotEquals.id] !== q.conditionNotEquals.value;
-  return true;
-}
-function renderQuestion(q){
-  if(!isConditionMet(q)) return '';
-  let content = '';
-  let note = q.note ? `<div class="soft-note">${q.note}</div>` : '';
-  let picked = q.dynamicPicked && answers[q.dynamicPicked] ? `<div class="soft-note">You picked: ${escHtml(answers[q.dynamicPicked])}</div>` : '';
-  if(q.type === 'single' || q.type === 'singleOther' || q.type === 'conditionalSingleOther' || q.type === 'conditionalSingle'){
-    content = `<div class="opt-list">${q.options.map(o=>`
-      <button type="button" class="opt-btn ${answers[q.id]===o?'selected':''}" onclick="setSingle('${q.id}', '${escJs(o)}', '${q.otherId||''}')">${o}</button>
-    `).join('')}</div>`;
-    if(q.otherId){
-      content += `<div id="${q.otherId}-wrap" style="display:${answers[q.id]==='Other'?'block':'none'};margin-top:10px;">
-        <input class="text-input" value="${escAttr(answers[q.otherId]||'')}" placeholder="Please specify" oninput="setText('${q.otherId}', this.value)">
-      </div>`;
-    }
+  if(q.dynamicPicked && answers[q.dynamicPicked]) card.append(el('div','note','You picked: ' + answers[q.dynamicPicked]));
+
+  const title = el('div','qtitle',q.label);
+  card.append(title);
+  if(q.sub) card.append(el('div','qsub',q.sub));
+
+  if(q.type === 'single' || q.type === 'singleOther' || q.type === 'singleEmail'){
+    card.append(renderSingle(q));
   } else if(q.type === 'multi' || q.type === 'multiOther' || q.type === 'multiMax'){
-    const arr = Array.isArray(answers[q.id]) ? answers[q.id] : [];
-    content = `<div class="opt-list">${q.options.map(o=>`
-      <button type="button" class="chk-btn ${arr.includes(o)?'selected':''}" onclick="toggleMulti('${q.id}', '${escJs(o)}', ${q.max||0}, '${escJs(q.none||'')}', '${q.otherId||''}')"><span class="chk-icon">✓</span><span>${o}</span></button>
-    `).join('')}</div>`;
-    if(q.otherId){
-      content += `<div id="${q.otherId}-wrap" style="display:${arr.includes('Other')?'block':'none'};margin-top:10px;">
-        <input class="text-input" value="${escAttr(answers[q.otherId]||'')}" placeholder="Please specify" oninput="setText('${q.otherId}', this.value)">
-      </div>`;
-    }
-  } else if(q.type === 'rank3'){
-    content = `<div class="rank-row">
-      ${[1,2,3].map(i=>`<div class="rank-item"><div class="rank-badge">${i}</div><select class="select-input" id="rank${i}" onchange="setRank(${i}, this.value)">${rankOptions(i)}</select></div>`).join('')}
-    </div>`;
+    card.append(renderMulti(q));
+  } else if(q.type === 'text'){
+    card.append(renderText(q));
+  } else if(q.type === 'pesoNumber'){
+    card.append(renderPesoNumber(q));
   } else if(q.type === 'imageText'){
-    content = `<img class="brand-img" src="${q.image}" alt="Brand identity image"><textarea class="textarea-input" placeholder="Type 3 words that come to mind..." oninput="setText('${q.id}', this.value)">${escHtml(answers[q.id]||'')}</textarea>`;
-  } else if(q.type === 'placeholderText'){
-    content = `<div class="placeholder-card">${q.placeholder}</div><textarea class="textarea-input" placeholder="Type 3 words that come to mind..." oninput="setText('${q.id}', this.value)">${escHtml(answers[q.id]||'')}</textarea>`;
-  } else if(q.type === 'conditionalText'){
-    content = `<textarea class="textarea-input" placeholder="Type brand name/s here..." oninput="setText('${q.id}', this.value)">${escHtml(answers[q.id]||'')}</textarea>`;
+    const img = document.createElement('img');
+    img.className = 'brand-img';
+    img.src = q.image;
+    img.alt = 'Brand identity';
+    img.onerror = () => { img.style.display='none'; card.insertBefore(el('div','note','Brand image is not loading. Please check the image file in GitHub.'), title.nextSibling); };
+    card.append(img, renderText(q));
+  } else if(q.type === 'rank3'){
+    card.append(renderRank(q));
   }
-  return `<div class="q-block" id="block-${q.id}">
-    ${note}${picked}
-    <div class="q-label">${q.label} ${q.required?'<span class="required">*</span>':''}</div>
-    ${q.sub?`<div class="q-sub">${q.sub}</div>`:''}
-    ${content}
-    <div class="field-error" id="err-${q.id}">Please answer this question.</div>
-  </div>`;
+
+  const err = el('div','errorbox','Please answer this question.');
+  err.id = 'errBox';
+  card.append(err);
 }
-function rankOptions(i){
-  const current = answers['q16_channelRank'+i] || '';
-  const selected = [1,2,3].filter(j=>j!==i).map(j=>answers['q16_channelRank'+j]).filter(Boolean);
-  let html = `<option value="">-- Rank ${i}${i===1?' (top choice)':''} --</option>`;
-  channelOptions.forEach(o=>{
-    if(!selected.includes(o) || o === current) html += `<option value="${escAttr(o)}" ${current===o?'selected':''}>${o}</option>`;
+
+function renderSingle(q){
+  const wrap = el('div','options','');
+  q.options.forEach(opt => {
+    const b = buttonChoice(opt, answers[q.id] === opt);
+    b.addEventListener('click', () => {
+      answers[q.id] = opt;
+      if(q.otherId && opt !== 'Other') answers[q.otherId] = '';
+      if(q.id === 'q12_productIdea' && opt === 'None of these') answers.q12a_productIdeaIntent = '';
+      save();
+      render();
+      if(opt !== 'Other') autoNext();
+    });
+    wrap.appendChild(b);
   });
-  return html;
-}
-function setRank(i, value){
-  answers['q16_channelRank'+i] = value;
-  saveAnswers();
-  renderSection();
-}
-function setSingle(id, value, otherId){
-  answers[id] = value;
-  if(otherId && value !== 'Other') answers[otherId] = '';
-  if(id === 'q12_productIdea' && value === 'None of these') answers.q12a_productIdeaIntent = '';
-  saveAnswers();
-  renderStep();
-  markAnsweredBlock(id);
-  scrollToNextUnanswered(id);
-}
-function toggleMulti(id, value, max, none, otherId){
-  let arr = Array.isArray(answers[id]) ? [...answers[id]] : [];
-  const has = arr.includes(value);
-  if(has) arr = arr.filter(x=>x!==value);
-  else {
-    if(none && value === none) arr = [value];
-    else {
-      if(none) arr = arr.filter(x=>x!==none);
-      if(max && arr.length >= max){ alert(`Please choose up to ${max} options only.`); return; }
-      arr.push(value);
-    }
+  if(q.otherId && answers[q.id] === 'Other'){
+    const inp = document.createElement('input');
+    inp.className = 'input otherbox';
+    inp.placeholder = 'Please specify';
+    inp.value = answers[q.otherId] || '';
+    inp.addEventListener('input', e => { answers[q.otherId] = e.target.value; save(); });
+    wrap.appendChild(inp);
   }
-  answers[id] = arr;
-  if(otherId && !arr.includes('Other')) answers[otherId]='';
-  if(id === 'q3_skinConcerns' && arr.includes('I do not have any skin concerns')) { answers.q4_biggestConcern = ''; answers.q4_biggestConcernOther = ''; }
-  saveAnswers();
-  renderSection();
+  if(q.type === 'singleEmail' && answers[q.id] === 'Yes'){
+    const lab = el('div','email-label',q.emailLabel || 'Email address');
+    const inp = document.createElement('input');
+    inp.className = 'input otherbox';
+    inp.type = 'email';
+    inp.placeholder = 'name@email.com';
+    inp.value = answers[q.emailId] || '';
+    inp.addEventListener('input', e => { answers[q.emailId] = e.target.value; save(); });
+    wrap.appendChild(lab); wrap.appendChild(inp);
+  }
+  return wrap;
 }
-function setText(id, value){ answers[id] = value; saveAnswers(); if(id==='q6a_otherBrands') renderSection(); }
-function validateSection(){
-  clearErrors();
-  const sec = sections[currentIndex];
-  let first = null;
-  sec.questions.forEach(q=>{
-    if(!q.required || !isConditionMet(q)) return;
-    let ok = true;
-    if(q.type === 'rank3'){
-      const vals = [answers.q16_channelRank1, answers.q16_channelRank2, answers.q16_channelRank3].filter(Boolean);
-      ok = vals.length===3 && (new Set(vals)).size===3;
-    } else {
-      const val = answers[q.id];
-      ok = !(val === undefined || val === null || val === '' || (Array.isArray(val) && val.length===0));
-    }
-    if(ok && q.otherId && answers[q.id] === 'Other'){
-      ok = !!String(answers[q.otherId]||'').trim();
-    }
-    if(ok && q.type === 'multiOther'){
-      const arr = Array.isArray(answers[q.id]) ? answers[q.id] : [];
-      if(arr.includes('Other')) ok = !!String(answers[q.otherId]||'').trim();
-    }
-    if(!ok && !first){
-      first = document.getElementById('block-'+q.id) || document.getElementById('err-'+q.id);
-    }
-    if(!ok) showError(q.id);
+
+function renderMulti(q){
+  const wrap = el('div','options','');
+  const selected = Array.isArray(answers[q.id]) ? answers[q.id] : [];
+  q.options.forEach(opt => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'choice' + (selected.includes(opt) ? ' selected' : '');
+    b.innerHTML = `<span class="checkline"><span class="checkbox"></span><span>${escapeHtml(opt)}</span></span>`;
+    b.addEventListener('click', () => {
+      let arr = Array.isArray(answers[q.id]) ? [...answers[q.id]] : [];
+      if(arr.includes(opt)) arr = arr.filter(x=>x!==opt);
+      else {
+        if(q.none && opt === q.none) arr = [opt];
+        else {
+          if(q.none) arr = arr.filter(x=>x!==q.none);
+          if(q.max && arr.length >= q.max){ showError(`Choose up to ${q.max} only.`); return; }
+          arr.push(opt);
+        }
+      }
+      answers[q.id] = arr;
+      if(q.otherId && !arr.includes('Other')) answers[q.otherId] = '';
+      if(q.id === 'q3_skinConcerns' && arr.includes('I do not have any skin concerns')){ answers.q4_biggestConcern=''; answers.q4_biggestConcernOther=''; }
+      save();
+      render();
+    });
+    wrap.appendChild(b);
   });
-  if(first){ first.scrollIntoView({behavior:'smooth',block:'center'}); return false; }
-  return true;
+  if(q.otherId && selected.includes('Other')){
+    const inp = document.createElement('input');
+    inp.className = 'input otherbox';
+    inp.placeholder = 'Please specify';
+    inp.value = answers[q.otherId] || '';
+    inp.addEventListener('input', e => { answers[q.otherId] = e.target.value; save(); });
+    wrap.appendChild(inp);
+  }
+  return wrap;
 }
-function showError(id){ const b=document.getElementById('block-'+id); if(b) b.classList.add('error'); }
-function clearErrors(){ document.querySelectorAll('.error').forEach(x=>x.classList.remove('error')); }
+
+function renderText(q){
+  const ta = document.createElement('textarea');
+  ta.className = 'textarea';
+  ta.placeholder = q.id === 'q7_logoWords' ? 'Type 3 words that come to mind...' : 'Type your answer here...';
+  ta.value = answers[q.id] || '';
+  ta.addEventListener('input', e => { answers[q.id] = e.target.value; save(); });
+  return ta;
+}
+
+function renderPesoNumber(q){
+  const outer = document.createElement('div');
+  const wrap = el('div','peso-wrap','');
+  const prefix = el('div','peso-prefix','₱');
+  const inp = document.createElement('input');
+  inp.className = 'input peso-input'; inp.type = 'number'; inp.inputMode = 'numeric'; inp.min = '0';
+  inp.placeholder = q.placeholder || 'Enter an amount'; inp.value = answers[q.id] || '';
+  inp.addEventListener('input', e => { answers[q.id] = e.target.value; save(); });
+  wrap.append(prefix, inp); outer.appendChild(wrap);
+  if(q.helper) outer.appendChild(el('div','helper',q.helper));
+  return outer;
+}
+
+
+function renderRank(q){
+  const wrap = el('div','rank-list','');
+  [1,2,3].forEach(rank => {
+    const row = el('div','rank-row','');
+    row.appendChild(el('div','badge',String(rank)));
+    const select = document.createElement('select');
+    select.className = 'select';
+    const currentVal = answers['q16_channelRank'+rank] || '';
+    const selectedOthers = [1,2,3].filter(x=>x!==rank).map(x=>answers['q16_channelRank'+x]).filter(Boolean);
+    select.appendChild(new Option(rank === 1 ? 'Rank 1 — top choice' : `Rank ${rank}`, ''));
+    CHANNELS.forEach(opt => {
+      if(!selectedOthers.includes(opt) || opt === currentVal){
+        const option = new Option(opt, opt);
+        if(opt === currentVal) option.selected = true;
+        select.appendChild(option);
+      }
+    });
+    select.addEventListener('change', e => { answers['q16_channelRank'+rank] = e.target.value; save(); render(); });
+    row.appendChild(select);
+    wrap.appendChild(row);
+  });
+  return wrap;
+}
+
+function buttonChoice(label, selected){
+  const b = document.createElement('button');
+  b.type = 'button';
+  b.className = 'choice' + (selected ? ' selected' : '');
+  b.textContent = label;
+  return b;
+}
+
+function validate(q, silent=false){
+  let ok = true;
+  if(q.type === 'rank3'){
+    const vals = [answers.q16_channelRank1, answers.q16_channelRank2, answers.q16_channelRank3].filter(Boolean);
+    ok = vals.length === 3 && (new Set(vals)).size === 3;
+  } else {
+    const v = answers[q.id];
+    ok = !(v === undefined || v === null || v === '' || (Array.isArray(v) && v.length === 0));
+  }
+  if(ok && q.otherId && answers[q.id] === 'Other') ok = !!String(answers[q.otherId] || '').trim();
+  if(ok && q.type === 'singleEmail' && answers[q.id] === 'Yes'){
+    const email = String(answers[q.emailId] || '').trim();
+    ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+  if(ok && q.type === 'multiOther'){
+    const arr = Array.isArray(answers[q.id]) ? answers[q.id] : [];
+    if(arr.includes('Other')) ok = !!String(answers[q.otherId] || '').trim();
+  }
+  if(!ok && !silent) showError('Please answer this question.');
+  return ok;
+}
+
+function showError(msg){
+  const box = document.getElementById('errBox');
+  if(box){ box.textContent = msg; box.classList.add('show'); }
+}
 
 function renderReview(){
-  const review = [];
-  sections.forEach((sec, idx)=>{
-    let items = '';
-    sec.questions.forEach(q=>{
-      if(!isConditionMet(q)) return;
-      let value = '';
-      if(q.type === 'rank3') value = [answers.q16_channelRank1, answers.q16_channelRank2, answers.q16_channelRank3].filter(Boolean).join(' / ');
-      else if(Array.isArray(answers[q.id])) value = answers[q.id].join(', ');
-      else value = answers[q.id] || '';
-      if(q.otherId && answers[q.otherId]) value += ` — ${answers[q.otherId]}`;
-      if(!value) return;
-      items += `<div class="review-item"><div class="review-q">${q.label}</div><div class="review-a">${escHtml(value)}</div></div>`;
+  const wrap = document.getElementById('reviewContent');
+  wrap.innerHTML = '';
+  RAW_SECTIONS.forEach(sec => {
+    const visible = sec.questions.filter(q => isVisible(q) && answerText(q));
+    if(!visible.length) return;
+    const section = document.createElement('div');
+    section.className = 'review-section';
+    const head = document.createElement('div');
+    head.className = 'review-head';
+    const h = document.createElement('h3'); h.textContent = sec.title;
+    const firstIndex = visibleQuestions().findIndex(q => q.sectionId === sec.id);
+    const edit = document.createElement('button'); edit.className='editbtn'; edit.textContent='Edit';
+    edit.addEventListener('click',()=>{ current = Math.max(0, firstIndex); save(); screen('question'); render(); });
+    head.append(h,edit);
+    section.appendChild(head);
+    visible.forEach(q => {
+      const item = document.createElement('div'); item.className='review-item';
+      item.innerHTML = `<div class="review-q">${escapeHtml(q.label)}</div><div class="review-a">${escapeHtml(answerText(q))}</div>`;
+      section.appendChild(item);
     });
-    review.push(`<div class="review-section"><div class="review-head"><h3>${sec.title}</h3><button class="btn-secondary btn-sm" onclick="currentIndex=${idx};goTo('survey');renderSection();">Edit</button></div>${items}</div>`);
+    wrap.appendChild(section);
   });
-  document.getElementById('review-content').innerHTML = review.join('');
+}
+
+function answerText(q){
+  if(q.type === 'rank3') return [answers.q16_channelRank1, answers.q16_channelRank2, answers.q16_channelRank3].filter(Boolean).join(' / ');
+  let v = answers[q.id];
+  if(Array.isArray(v)) v = v.join(', ');
+  v = v || '';
+  if(q.otherId && answers[q.otherId]) v += ' — ' + answers[q.otherId];
+  return String(v).trim();
 }
 
 function computeScores(){
@@ -674,44 +493,47 @@ function computeScores(){
   if(answers.q10_productInterest && answers.q10_productInterest !== 'I am not interested in trying any') interest += 25;
   if(answers.q11_oneProductChoice && answers.q11_oneProductChoice !== 'I would not add any') interest += 25;
   if(answers.q12_productIdea && answers.q12_productIdea !== 'None of these') interest += 20;
-  let specificIntent = intentMap[answers.q12a_productIdeaIntent] || 0;
-  interest += Math.round(specificIntent * .30);
-  interest = Math.min(100, interest);
-  let channel = [answers.q16_channelRank1,answers.q16_channelRank2,answers.q16_channelRank3].filter(Boolean).length * 30;
-  channel = Math.min(100, channel);
-  let wordOfMouth = intentMap[answers.q20_friendTrialIntent] || 0;
-  let opportunity = Math.round(specificIntent*.35 + wordOfMouth*.25 + interest*.20 + price*.10 + readiness*.05 + channel*.05);
-  return {
-    computed_readinessScore: readiness,
-    computed_productInterestScore: interest,
-    computed_specificConceptIntentScore: specificIntent,
-    computed_wordOfMouthIntentScore: wordOfMouth,
-    computed_priceScore: price,
-    computed_channelScore: channel,
-    computed_productOpportunityScore: opportunity
-  };
+  let q12a = intentMap[answers.q12a_productIdeaIntent] || 0; interest += Math.round(q12a * .30);
+  let q20 = intentMap[answers.q20_friendTrialIntent] || 0;
+  let channel = Math.min(100, [answers.q16_channelRank1,answers.q16_channelRank2,answers.q16_channelRank3].filter(Boolean).length * 30);
+  let opportunity = Math.round(q12a*.35 + q20*.25 + interest*.20 + price*.10 + readiness*.05 + channel*.05);
+  const priceAcceptanceMap = {'Under ₱500':10,'₱500–₱999':25,'₱1,000–₱1,499':45,'₱1,500–₱1,999':65,'₱2,000–₱2,499':80,'₱2,500–₱2,999':90,'₱3,000 or more':100,'I would not pay for this kind of kit':0};
+  const purchaseIntentMap = {'Yes, definitely':100,'Yes, probably':75,'Not sure':50,'No, probably not':20,'No, definitely not':0};
+  const preOrderMap = {'Yes, I would pre-order':100,'I would need more information first':50,'No, I would rather wait until it launches':20,'No, I am not interested':0};
+  const targetIncome = ['₱50,000–₱99,999','₱100,000–₱199,999','₱200,000 or more'].includes(answers.q24_incomeLevel);
+  const giftArr = Array.isArray(answers.q28_giftOccasions) ? answers.q28_giftOccasions : [];
+  const giftSignal = giftArr.some(x => x !== 'I would not buy this as a gift') || ['Yes, definitely','Yes, probably'].includes(answers.q29_corporateGiftInterest);
+  return {computed_readinessScore: readiness, computed_productInterestScore: Math.min(100, interest), computed_specificConceptIntentScore: q12a, computed_wordOfMouthIntentScore: q20, computed_priceScore: price, computed_channelScore: channel, computed_productOpportunityScore: opportunity, computed_priceAcceptanceScore: priceAcceptanceMap[answers.q22_priceAcceptance] || 0, computed_purchaseIntentScore: purchaseIntentMap[answers.q25_purchaseIntent3mo] || 0, computed_preOrderScore: preOrderMap[answers.q26_preOrderCommitment] || 0, computed_targetIncomeMatch: targetIncome, computed_giftMarketSignal: giftSignal};
 }
+
 function computeSegments(){
   const tags = [];
   const concerns = Array.isArray(answers.q3_skinConcerns) ? answers.q3_skinConcerns : [];
+  const channels = [answers.q16_channelRank1,answers.q16_channelRank2,answers.q16_channelRank3];
+  const giftArr = Array.isArray(answers.q28_giftOccasions) ? answers.q28_giftOccasions : [];
   if(['Daily','A few times a week'].includes(answers.q1_usageFrequency)) tags.push('Current Skincare User');
   if(['Very likely','Likely'].includes(answers.q12a_productIdeaIntent) && ['Very likely','Likely'].includes(answers.q20_friendTrialIntent)) tags.push('High-Intent Trial User');
   if(['₱700–₱999','₱1,000 or more'].includes(answers.q15_maxPrice)) tags.push('Premium-Open Buyer');
   if(['Under ₱200','₱200–₱399'].includes(answers.q15_maxPrice)) tags.push('Price-Sensitive Buyer');
-  if(concerns.some(x=>x.includes('Oily') || x.includes('Pimples') || x.includes('Acne'))) tags.push('Oil / Acne Concern');
-  if(concerns.some(x=>x.includes('dark') || x.includes('Uneven') || x.includes('marks'))) tags.push('Marks / Uneven Tone Concern');
-  if(concerns.some(x=>x.includes('sun') || x.includes('Darkening'))) tags.push('Sun Exposure Concern');
-  if(['Office / Corporate employee','Sales / Client-facing work','Business owner / Self-employed'].includes(answers.respondent_profession)) tags.push('Appearance-Matters Work');
-  const channels = [answers.q16_channelRank1,answers.q16_channelRank2,answers.q16_channelRank3];
+  if(concerns.some(x=>/oily|pimple|acne/i.test(x))) tags.push('Oil / Acne Concern');
+  if(concerns.some(x=>/marks|spots|uneven|dark/i.test(x))) tags.push('Marks / Uneven Tone Concern');
+  if(concerns.some(x=>/sun|darkening/i.test(x))) tags.push('Sun Exposure Concern');
   if(channels.some(c=>['Watsons','Mercury Drug'].includes(c))) tags.push('Pharmacy Retail Buyer');
   if(channels.some(c=>['Shopee','Lazada','TikTok Shop'].includes(c))) tags.push('Social / Ecomm Buyer');
+  if(['₱50,000–₱99,999','₱100,000–₱199,999','₱200,000 or more'].includes(answers.q24_incomeLevel)) tags.push('Target Income Match');
+  if(['₱2,000–₱2,499','₱2,500–₱2,999','₱3,000 or more'].includes(answers.q22_priceAcceptance)) tags.push('Price Confident (₱2,000+)');
+  if(['Yes, definitely','Yes, probably'].includes(answers.q25_purchaseIntent3mo)) tags.push('High Purchase Intent');
+  if(answers.q26_preOrderCommitment === 'Yes, I would pre-order') tags.push('Pre-Order Ready');
+  if(answers.q27_waitlistOptIn === 'Yes' && String(answers.q27_waitlistEmail || '').trim()) tags.push('Waitlist Signup');
+  const giftSignal = giftArr.some(x => x !== 'I would not buy this as a gift') || ['Yes, definitely','Yes, probably'].includes(answers.q29_corporateGiftInterest);
+  if(giftSignal) tags.push('Gift Buyer Potential');
   return tags.join(', ');
 }
 
-function submitSurvey(){
-  const btn = document.getElementById('submit-btn');
-  const err = document.getElementById('submit-error');
-  err.classList.add('hidden');
+function submitAnswers(){
+  const btn = document.getElementById('submitBtn');
+  const err = document.getElementById('submitErr');
+  err.classList.remove('show');
   btn.disabled = true;
   btn.innerHTML = '<span class="spinner"></span>Submitting...';
   const params = new URLSearchParams(window.location.search);
@@ -723,78 +545,24 @@ function submitSurvey(){
     utm_medium:params.get('utm_medium') || 'direct',
     utm_campaign:params.get('utm_campaign') || 'direct',
     computed_segmentTags:computeSegments(),
-    q2_productsUsed:arrToText(answers.q2_productsUsed),
-    q3_skinConcerns:arrToText(answers.q3_skinConcerns),
-    q6_brandAwareness:arrToText(answers.q6_brandAwareness),
-    q13_easyUseFactors:arrToText(answers.q13_easyUseFactors),
-    q17_confidenceDrivers:arrToText(answers.q17_confidenceDrivers),
-    q18_socialTrustContent:arrToText(answers.q18_socialTrustContent),
-    q21_barriers:arrToText(answers.q21_barriers)
+    q2_productsUsed:arrText(answers.q2_productsUsed),
+    q3_skinConcerns:arrText(answers.q3_skinConcerns),
+    q6_brandAwareness:arrText(answers.q6_brandAwareness),
+    q13_easyUseFactors:arrText(answers.q13_easyUseFactors),
+    q17_confidenceDrivers:arrText(answers.q17_confidenceDrivers),
+    q18_socialTrustContent:arrText(answers.q18_socialTrustContent),
+    q21_barriers:arrText(answers.q21_barriers),
+    q28_giftOccasions:arrText(answers.q28_giftOccasions)
   });
-  if(IS_DEMO){ setTimeout(showThankYou, 900); return; }
   fetch(API_URL, {method:'POST', mode:'no-cors', headers:{'Content-Type':'text/plain'}, body:JSON.stringify(payload)}).catch(()=>{});
-  setTimeout(showThankYou, 1700);
-}
-function showThankYou(){
-  try{ localStorage.removeItem(LS_KEY); localStorage.setItem(LS_SUBMITTED,'1'); }catch(e){}
-  answers = {};
-  goTo('thankyou');
-}
-function arrToText(v){ return Array.isArray(v) ? v.join(', ') : (v || ''); }
-
-function loadAnalytics(){
-  const pin = document.getElementById('admin-pin').value || ADMIN_PIN;
-  const cbName = 'skinIntelAnalyticsCb_' + Date.now();
-  window[cbName] = function(data){
-    delete window[cbName];
-    renderAdmin(data);
-  };
-  const s = document.createElement('script');
-  s.src = API_URL + '?action=getAnalytics&pin=' + encodeURIComponent(pin) + '&callback=' + cbName;
-  s.onerror = function(){ alert('Unable to load analytics. Check Apps Script deployment.'); };
-  document.body.appendChild(s);
-}
-function renderAdmin(data){
-  if(!data || !data.ok){ alert((data && data.error) || 'Invalid PIN or analytics error.'); return; }
-  goTo('admin');
-  document.getElementById('admin-updated').textContent = 'Last updated: ' + new Date(data.lastUpdated || Date.now()).toLocaleString();
-  const k = data.kpi || {};
-  const dist = data.distributions || {};
-  const html = `
-    <div class="kpi-grid">
-      ${kpi(data.totalResponses || 0, 'Total Responses')}
-      ${kpi(k.topProductOpportunity || '—', 'Top Product Opportunity')}
-      ${kpi(k.topSkinConcern || '—', 'Top Skin Concern')}
-      ${kpi(k.highIntentPct ? k.highIntentPct + '%' : '0%', 'High-Intent Trial Users')}
-      ${kpi(k.bestPriceBand || '—', 'Best Price Band')}
-      ${kpi(k.topPurchaseChannel || '—', 'Top Channel')}
-    </div>
-    ${chartCard('Product Interest', dist.q10)}
-    ${chartCard('Skin Concerns', dist.q3)}
-    ${chartCard('Product Ideas', dist.q12)}
-    ${chartCard('Specific Product Intent', dist.q12a)}
-    ${chartCard('Trust Drivers', dist.q17)}
-    ${chartCard('Channels — All Ranks', dist.q16all)}
-    ${chartCard('Messages', dist.q19)}
-  `;
-  document.getElementById('admin-content').innerHTML = html;
-}
-function kpi(v,l){return `<div class="kpi-card"><div class="kpi-val">${escHtml(String(v))}</div><div class="kpi-lbl">${l}</div></div>`}
-function chartCard(title, obj){
-  const entries = Object.entries(obj || {});
-  if(!entries.length) return `<div class="card"><h3>${title}</h3><p style="color:var(--muted)">No data yet.</p></div>`;
-  const max = Math.max(...entries.map(e=>Number(e[1])||0),1);
-  return `<div class="card"><h3 style="margin-bottom:12px;color:var(--charcoal)">${title}</h3>${entries.sort((a,b)=>b[1]-a[1]).slice(0,10).map(([label,count])=>`
-    <div class="chart-row"><div class="chart-label">${escHtml(label)}</div><div class="chart-track"><div class="chart-fill" style="width:${Math.round(count/max*100)}%"></div></div><div class="chart-count">${count}</div></div>
-  `).join('')}</div>`;
+  setTimeout(()=>{ clearAll(); answers={}; screen('thanks'); }, 1500);
 }
 
-function escHtml(s){return String(s||'').replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));}
-function escAttr(s){return escHtml(s);}
-function escJs(s){return String(s||'').replace(/\\/g,'\\\\').replace(/'/g,"\\'").replace(/\n/g,' ');}
+function arrText(v){ return Array.isArray(v) ? v.join(', ') : (v || ''); }
+function el(tag, cls, text){ const x = document.createElement(tag); if(cls) x.className=cls; if(text!==undefined) x.textContent=text; return x; }
+function escapeHtml(s){ return String(s||'').replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c])); }
 
-loadAnswers();
-if(Object.keys(answers).length) document.getElementById('resume-box').classList.remove('hidden');
+load();
 </script>
 </body>
 </html>

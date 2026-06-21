@@ -1,20 +1,22 @@
-# SKIN INTEL V1.8.3 — Q7 Choices Fixed
+# SKIN INTEL V1.8.4 — Remove Q26
 
-Upload this HTML as `index.html`.
+Changes:
+- Removed Q26 pre-order question from Section F.
+- Survey now continues from Q25 directly to Q27.
+- Removed pre-order scoring and pre-order dashboard/readout metrics from backend.
+- Q7 choices remain fixed.
+- Q7 image reference remains `adonis-q7-brand-identity.jpg`.
 
-Files needed in GitHub:
-- index.html
-- adonis-q7-brand-identity.jpg
+Files:
+- Upload `index_skin_intel_v1_8_4_REMOVE_Q26.html` as `index.html` in GitHub.
+- Replace Apps Script `Code.gs` with `api_skin_intel_v1_8_4_REMOVE_Q26.gs` or the copy-paste text file.
+- Keep `adonis-q7-brand-identity.jpg` in GitHub.
 
-Fix:
-- Q7 now definitely shows the brand image plus selectable description choices.
-- Q7 says: choose up to 3 words.
-- Q7 has Other with a text field.
-- The image file reference is `adonis-q7-brand-identity.jpg`.
-- No backend change required.
+After backend update:
+Deploy → Manage deployments → Edit pencil → New version → Deploy
 
-After upload:
-1. Rename this HTML to `index.html`.
-2. Upload to GitHub.
-3. Commit.
-4. Hard refresh with Command + Shift + R.
+Test:
+WEB_APP_URL?action=ping
+
+Expected:
+{"ok":true,"app":"SKIN INTEL","version":"V1.8.4 LIVE"}

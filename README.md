@@ -1,4 +1,4 @@
-# SKIN INTEL V1.6 UX POLISH
+# SKIN INTEL V1.8.2 UX FIXED
 
 Upload this HTML as `index.html`.
 
@@ -7,13 +7,16 @@ Files needed in GitHub:
 - adonis-q7-brand-identity.jpg
 
 Changes:
-- Start Over now clears old saved answers from all previous Skin Intel / Skin Check versions.
-- Single-choice answers now feel clicked: animated press, checkmark, stronger selected state.
-- After selecting a single-choice answer, the page moves toward the next unanswered question.
-- The Previous/Next controls stay visible at the bottom.
-- Q7 image reference uses `adonis-q7-brand-identity.jpg`.
-- Respondent-visible scores remain removed.
+- Removed Start Over from the home page.
+- Removed Start Over after submission to discourage duplicate survey responses.
+- After a respondent submits, the same browser/device will show the thank-you page instead of encouraging another submission.
+- Removed auto-advance. Respondents must click Next after choosing an answer.
+- Q7 now uses guided word choices: choose up to 3 words, with Other available.
+- Q7 image still references `adonis-q7-brand-identity.jpg`.
+- Backend stays V1.8. No backend update required unless you want a separate q7_logoWordsOther column later.
 
 After upload:
-- Commit
-- Hard refresh with Command + Shift + R
+1. Rename this HTML to `index.html`.
+2. Upload to GitHub.
+3. Commit.
+4. Hard refresh with Command + Shift + R.
